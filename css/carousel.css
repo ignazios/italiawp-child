@@ -1,0 +1,29 @@
+/*
+CSS personalizzato per il Carousel in Home Page
+Template: italiawp
+Text Domain: italiawp-child
+*/
+.hide-bullets {
+	list-style:none;
+	margin-left: -40px;
+	margin-top:20px;
+}
+.carousel-control.left {
+    background-image: none!important;
+ }
+
+.carousel-control.right {
+    background-image: none!important;
+}
+.container{
+	border: 1px solid #ddd;
+    border-radius: 4px;
+    padding:25px;
+}
+#slider-thumbs{
+	margin-left: 35px;
+	margin-right: 25px;
+}
+#Link{
+	border:0!important;
+}

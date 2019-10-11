@@ -1,0 +1,495 @@
+/*
+Theme Name: ItaliaWP Child Theme
+Theme URI: http://italiawp.borisamico.it
+Author: Boris Amico
+Author URI: http://borisamico.it
+Description: Tema child di ItaliaWP utilizzabile per la customizzazione.
+Version: 1.0.0
+License: GNU AFFERO GENERAL PUBLIC LICENSE v3 or later
+License URI: https://www.gnu.org/licenses/agpl-3.0.en.html
+Template: italiawp
+Text Domain: italiawp-child
+*/
+
+#MainMenu{
+	background-color:#06c!important;
+}
+#utilita-menu li a,#utilita-menu li{
+	border-top: none!important;
+	padding-top: 0.5em!important;
+	padding-bottom: 0!important;
+}
+.Header-owner a:hover,.Header-title a:hover{
+	color:white;
+}
+#Header-banner{
+	background-color:#0059b2!important;
+}
+.Header-login{
+	float: right;
+	color: white;
+}
+
+.Header-login a{
+	text-decoration: none; 
+	font-weight: bold;
+	color: white;
+	padding-right: 25px;
+	
+}
+.Header-navbarOLD{
+	padding-top: 0!important;
+	padding-bottom: 0!important;
+}
+.pdfprnt-top-right{
+	float:right
+}
+.HeaderAlbo{
+	float:left;
+	margin-right:2em;
+}
+
+.HeaderAlbo:hover{
+	text-decoration: none!important;
+} 
+.Servizi{
+	padding:5px;
+	margin-bottom:5px;
+}
+
+.Servizi img{
+	width:100%;
+}
+h2.ServiziTitle{
+	width: 100%!important;
+}
+
+img.InEvidenza{
+	max-width: 400px;
+	min-width: 200px;
+	margin: auto;
+	width:auto!important;
+}
+
+.IcoUser{
+	background-image: url("img/user.png");
+	background-repeat: no-repeat;
+	background-position: left;
+	line-height:34px;
+	padding-left:36px;
+}
+.IcoCalendar{
+	background-image: url("img/calendar.png");
+	background-repeat: no-repeat;
+	background-position: left;
+	line-height:34px;
+	padding-left:36px;
+}
+.IcoCategory{
+	background-image: url("img/category.png");
+	background-repeat: no-repeat;
+	background-position: left;
+	line-height:34px;
+	padding-left:36px;
+}
+.IcoTag{
+	background-image: url("img/tag.png");
+	background-repeat: no-repeat;
+	background-position: left;
+	line-height:34px;
+	padding-left:36px;
+}
+.IcoUser24{
+	background-image: url("img/user24.png");
+	background-repeat: no-repeat;
+	background-position: left;
+	line-height:26px;
+	padding-left: 4rem;
+}
+.IcoCalendar24{
+	background-image: url("img/calendar24.png");
+	background-repeat: no-repeat;
+	background-position: left;
+	line-height:26px;
+	padding-left: 4rem;
+}
+.IcoCategory24{
+	background-image: url("img/category24.png");
+	background-repeat: no-repeat;
+	background-position: left;
+	line-height:26px;
+	padding-left: 4rem;
+}
+.IcoTag24{
+	background-image: url("img/tag24.png");
+	background-repeat: no-repeat;
+	background-position: left;
+	line-height:26px;
+	padding-left: 4rem;
+}
+.clearfix
+{
+	*zoom:1
+}
+
+.clearfix:before,.clearfix:after
+{
+	display:table;
+	content:"";
+	line-height:0
+}
+
+.clearfix:after
+{
+	clear:both
+}
+.clndr
+{
+	overflow:hidden;
+	width:275px;
+	margin:5px;
+	padding-bottom: 5px;
+}
+@media(max-width:767px) {
+	.clndr
+	{
+		margin-bottom:30px
+	}
+
+}
+@media(max-width:990px) {
+	#BloccoMetaArticolo
+	{
+		max-width: 32em !important;
+	}
+
+}
+
+.clndr .clndr-controls
+{
+	color:#000;
+	width:100%;
+	padding-bottom:5px
+}
+@media(max-width:540px) {
+	.Headroom--not-top #Header-banner{
+		display: none;
+	}
+	.Headroom--fixed.Headroom--not-top .Header-navbar, .Headroom--pinned.Headroom--not-top .Header-navbar, .Headroom--unpinned.Headroom--not-top .Header-navbar {
+		padding-top:0!important;
+	}
+	#main{
+		margin-top: 130px;
+	}
+	#navslider{
+		position: initial!important;
+	}
+}
+.clndr .clndr-controls
+{
+	color:#000;
+	width:100%;
+	padding-bottom:5px
+}
+.clndr .clndr-controls .clndr-previous-button,.clndr .clndr-controls .clndr-next-button
+{
+	cursor:pointer;
+	display:block;
+	padding-bottom:5px;
+	padding-top:5px;
+	text-align:center;
+	transition:background-color .5s ease 0;
+	width:15%;
+	float:left;
+}
+
+.clndr .clndr-controls .clndr-previous-button,.clndr .clndr-controls .clndr-next-button
+{
+	height:40px
+}
+
+.clndr .clndr-controls .month
+{
+	display:block;
+	padding-bottom:5px;
+	padding-top:5px;
+	text-align:center;
+	width:70%;
+	float:left;
+	text-transform:uppercase;
+	font-family:"titillium_semibold",Helvetica,Arial,sans-serif;
+	color:#06c
+}
+
+.clndr .days-container
+{
+	display:block;
+	position:relative;
+	width:100%
+}
+
+.clndr .days-container .days
+{
+	background-color:#fff;
+	transition:left .5s ease 0;
+	width:100%
+}
+
+.clndr .days-container .days .day,.clndr .days-container .days .empty
+{
+	color:#1c2024;
+	display:block;
+	font-size:.84em;
+	text-align:center;
+	width:14.2857%;
+	float:left;
+	font-family:"titillium_semibold",Helvetica,Arial,sans-serif
+}
+
+.clndr .days-container .days .day 
+{
+	display:block;
+	padding:8px 0;
+	color:#1c2024
+}
+
+.clndr .days-container .days .day a:hover
+{
+	text-decoration:none;
+	cursor:default
+}
+
+.clndr .days-container .days .day.event,.clndr .days-container .days .empty.event
+{
+	cursor:pointer;
+	transition:background-color .5s ease 0;
+	position:relative;
+	z-index:0;
+}
+
+.clndr .days-container .days .day.event a,.clndr .days-container .days .empty.event
+{
+	cursor:pointer;
+	color:#06c
+}
+
+.clndr .days-container .days .day.event a:hover,.clndr .days-container .days .empty.event a:hover
+{
+	text-decoration:underline
+}
+
+.clndr .days-container .days .empty
+{
+	height:31px;
+	vertical-align:bottom
+}
+
+.clndr .days-container .days .headers .day-header
+{
+	color:#000;
+	display:block;
+	text-align:center;
+	width:14.2857%;
+	float:left;
+	font-size:.8em;
+	padding-top:10px;
+	padding-bottom:10px
+}
+
+.days-container .days .adjacent-month
+{
+	opacity:0
+}
+
+.clndr .days-container .days .day.today 
+{
+	background:#06c;
+	color:#fff
+}
+
+.clndr .days-container .days
+{
+	padding-left:10px
+}
+
+.clndr .days-container .days .day
+{
+	margin-top:-1px;
+	margin-left:-1px
+}
+
+.clndr .days-container .days .day 
+{
+	border:1px solid #dbdbd6
+}
+.clndr .days-container .days .eventless-pre, .clndr .days-container .days .eventless-post {
+    color: #ccc;
+}
+.clndr .days-container .days .eventful a{
+	border-radius: 100% !important;
+	text-decoration:none;
+	padding: 3px 5px 3px 3px;
+}
+.em-calnav{
+	text-decoration:none;
+}
+.box_data_evento {
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+    border-right: 1px solid #dbdbd6;
+    text-align: center;
+    line-height: 1.1;
+	min-height: 180px;
+	display:inline;
+	float:left;
+	height: 100%;
+}
+.box_data_evento span {
+    font-size: 2.4em;
+    margin: 0;
+    line-height: .9;
+}
+.box_data_evento p {
+	font-size: 1.4em;
+    margin: 0;
+    line-height: 1.1;
+}
+.box_data_evento small {
+	font-size: 1.0em;
+    margin: 0;
+    line-height: 1.0;
+}
+.box_data_calendario_number {
+    margin: 0 0 0 0;
+	padding: 10px;
+}
+.box_contenuto_evento {
+	margin-left: 60px;
+}
+
+#listaDate, #listaLuoghi{
+	margin:-30px 10px 10px 10px!important;
+	padding-left:15px!important;
+	list-style: circle;
+}
+#ListaCircolari li p,#ListaArticoli li p{
+	color:#000!important;
+	line-height:1.3em;
+	margin-left:15px;
+	margin-bottom:10px; 
+}
+#loading {
+	display:none;
+	position: fixed;
+	top:50%;
+	left:50%;
+	margin-left:-75px;
+	margin-top: -75px;
+	height: 150px;
+	width: 150px;
+	z-index: 101;
+	overflow: hidden;
+	outline: 0;
+	text-align: center;
+	opacity: 0.8;
+	background: #F2F2F2 url(img/loading.gif) 50% 50% no-repeat;
+}
+.u-border-top-none, .Accordion--default .Accordion-header {
+    margin-left: -2rem;
+    overflow: visible!important;
+}
+#TitoloMenu{
+	font-size: 2.3rem !important;
+    letter-spacing: 0.01em !important;
+    font-weight: 600 !important;
+        color: #06c !important;
+        line-height: 1.55 !important;
+        padding-bottom: 1em !important;
+        padding-top: 1em !important;
+}
+li.left{
+    padding-right: 20%;
+}
+#slider{
+	padding-left: 10%;
+    padding-right: 10%;
+}
+#exTab1 .tab-content {
+  padding : 5px 15px;
+}
+#exTab1 .tab-pane {
+  padding : 5px 15px;
+  height: 30em;
+}
+#exTab1 .tab-pane-content{
+	height: 90%;
+	overflow: hidden;
+}
+#exTab1 .tab-pane-readnext{
+	height: 10%;
+}
+
+/* remove border radius for the tab */
+
+#exTab1 .nav-tabs {
+  border-radius: 0;
+}
+.soggetti{
+	width: 100%;
+}
+p{
+	line-height: 2em;
+}
+
+.aligncenter,div.aligncenter {
+display:block;
+margin-left:auto;
+margin-right:auto;
+}
+
+.alignright {
+float:right;
+}
+.alignleft {
+float:left;
+}
+#navslider{
+	position: absolute;
+    bottom: 0px;
+    left: 50%;
+    height: 2em;
+}
+.site-content li {
+	list-style:square!important;
+	margin-left: 1em;
+}
+.site-content .thumbnails li{
+	list-style: none!important;
+}
+#Footer-links{
+	padding: 1em;
+	color:#ffffff;
+}
+#Footer-links a{
+	color:#428bca!important;
+}
+.dettagliFeddRss{
+	color:black!important;
+}
+.site-content .hide-bullets li {
+    list-style: none!important;
+    margin-left: 1em;
+}
+#slider-thumbs, #navslider .pager{
+	margin-top:4em;
+}
+#BloccoMetaArticolo, .BloccoSubNavPage{
+	margin-left:1em;
+}
+#BloccoMetaArticolo a,#BloccoMetaArticolo a:active, #BloccoMetaArticolo a:hover{
+	color:white;
+}
+#utilita-menu li{
+	list-style-type: none!important;
+}

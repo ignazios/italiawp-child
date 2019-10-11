@@ -1,0 +1,13 @@
+/*
+CSS personalizzato per il Carousel in Home Page dei link
+Template: italiawp
+Text Domain: italiawp-child
+*/
+.riassunto{
+	height: 8ex;
+    overflow: hidden;
+}
+
+.noBorder{
+	border: 0!important;
+}
