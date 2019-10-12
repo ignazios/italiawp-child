@@ -6,16 +6,18 @@
 ?>
 
 <?php if(is_front_page()): 
-	if (get_theme_mod('active_section_map')): ?>
+	if (get_theme_mod('active_section_map') And get_theme_mod('Scuola_Mappa')): ?>
 
-	<section id="mappa" class="u-layout-centerContent u-padding-r-top section">
+	<section id="mappa" class="u-layout-centerContent u-padding-r-top section  u-padding-bottom-l">
 	        <h2 class="u-text-r-l u-padding-r-all u-text-h3">Mappa Interattiva</h2>
-	       	<div class="map-full-content">
-	    		<div class="map-wrap" style="height: 500px; margin-bottom: -500px;"></div>
-					<?php echo get_theme_mod('Scuola_Mappa');?>	
+	       	<div class="map-full-content ">
+	    		<div class="map-wrap" style="height: 500px;"></div>
+					<?php echo get_theme_mod('Scuola_Mappa');
+					if(get_theme_mod('Scuola_Mappa_Link')):?>
 	    			<p class="u-textCenter u-text-md-right u-text-lg-right u-margin-r u-text-r-xl u-padding-right-m">
 	    				<a href="<?php echo get_theme_mod('Scuola_Mappa_Link');?>" class="u-color-50 u-textClean u-text-h4 external-link" target="_blank">Visualizza mappa ingrandita</a>
 	    			</p>
+	    			<?php endif;?>
 			</div>
 	</section>
 </section>
