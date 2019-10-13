@@ -265,6 +265,15 @@ if (count($pages)!=0)
         'section' => 'scuola_settings', 
         'settings' => 'Scuola_Mappa',
         'priority'	=> 26));
+    $wp_customize->add_setting('Scuola_Mappa_Link', array(
+        'default' => "", 
+        'capability' => 'edit_theme_options'));
+    $wp_customize->add_control('Scuola_Mappa_Link', array(
+        'type' => 'text', 
+        'label' => 'URL visualizza Mappa ingrandita',
+        'section' => 'scuola_settings', 
+        'settings' => 'Scuola_Mappa_Link',
+        'priority'	=> 27));
 }
 add_action('customize_register', 'italiawp_child_customize_register');
 function italiawp_child_sanitize_number( $input ) {
