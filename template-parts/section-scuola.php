@@ -9,11 +9,11 @@
 	 if(!$Testo_SinUp)
 	 	$Testo_SinUp="Docenti";
 	 $Logo_SinUp=get_theme_mod('Scuola_Logo_SinUp');
-	 	 $Link_SinUp=get_theme_mod('Scuola_categoria_SinUp');
+	 $Link_SinUp=get_theme_mod('Scuola_categoria_SinUp');
 	 if(!$Link_SinUp)
 	 	$Link_SinUp="#";
 	 else
-	 	$Link_Docenti=get_category_link($Link_SinUp);
+	 	$Link_SinUp=get_category_link($Link_SinUp);
 	 $Testo_DesUp=get_theme_mod('Scuola_Testo_DesUp');
 	 if(!$Testo_DesUp)
 	 	$Testo_DesUp="Personale ATA";
