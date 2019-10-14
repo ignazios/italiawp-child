@@ -27,8 +27,7 @@
           $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
     
     <link rel="icon" type="image/png" href="<?php echo esc_url($logo[0]); ?>">
-
-    <?php wp_head(); ?>
+ <?php wp_head(); ?>
 
     <!--
       In alternativa a WebFontLoader è possibile caricare il font direttamente da Google

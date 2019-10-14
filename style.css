@@ -10,6 +10,15 @@ License URI: https://www.gnu.org/licenses/agpl-3.0.en.html
 Template: italiawp
 Text Domain: italiawp-child
 */
+@media (min-width: 1014px){
+	.col-sm-25 {
+    	width: 23%;
+    	float: left;
+    	position: relative;
+    	min-height: 1px;
+    	margin:0.2em;
+	}
+}
 
 #MainMenu{
 	background-color:#06c!important;
