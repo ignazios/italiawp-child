@@ -19,6 +19,12 @@ class GalleriaLinks extends WP_Widget {
             $title = apply_filters('widget_title', $instance['titolo']);
             $idW=str_replace(" ","_",strtolower($instance['titolo']));
             $categoria=$instance['categoria'];
+			$MD=new Mobile_Detect();
+			if($MD->isMobile()){
+				$NC=1;
+			}else{
+				$NC=4;
+			}
 ?>
 <div class="u-layout-wide u-layoutCenter u-layout-withGutter u-padding-r-top u-padding-bottom-xs" id="Link">
 	<section id="Servizi">
@@ -46,7 +52,7 @@ class GalleriaLinks extends WP_Widget {
 				}else{
 					$StileNoExt='class="share-icon"';			}
 ?>			
-									<li class="col-sm-3 u-borderShadow-xs u-border-all-xxs u-padding-all-m u-margin-all-m ">
+									<li class="col-sm-25 u-borderShadow-xs u-border-all-xxs u-padding-all-m">
 										<div class="casing">
 											<div class="noBorder thumbnail" style="height:120px;">
 												<a href="<?php echo $Link->link_url.'" '.$StileNoExt;?>><img src="<?php echo $Link->link_image;?>" alt="" <?php echo $StileM;?>"></a>	
@@ -57,7 +63,7 @@ class GalleriaLinks extends WP_Widget {
 											</div>
 										</div>
 									</li>
-<?php 	if($Num==3){
+<?php 	if($Num==$NC){
 			$Num=0;
 ?>
 								</ul>
@@ -65,7 +71,7 @@ class GalleriaLinks extends WP_Widget {
 <?php							
 		}					
 } 
-	 	if($Num!=3){
+	 	if($Num!=$NC){
 ?>
 								</ul>
 							</div>
