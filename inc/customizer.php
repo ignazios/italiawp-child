@@ -217,7 +217,7 @@ if (count($pages)!=0)
         'type' 		=> 'select',
         'label' 	=> 'Seleziona la pagina Seconda Cartella',
         'section' 	=> 'scuola_settings',
-        'settings' => 'Scuola_Tabs_pagina',
+        'settings' => 'Scuola_secondaTabs_pagina',
         'priority'	=> 21,
         'choices'   => $pagine));
     $wp_customize->add_setting('Scuola_secondaTabs_testo_leggitutto', array(
