@@ -17,6 +17,18 @@ Text Domain: italiawp-child
 .d-w50{
 	width: 50%!important;
 }
+.d-w25{
+	width: 25%!important;
+}
+.ft-piccolo{
+	font-size: 0.8em;
+}
+.fb-border-tratteggiato{
+	border-style: dotted!important;
+}
+.d-tPiccolo{
+	font-size: 0.5em!important;
+}
 @media (min-width: 1014px){
 	.col-sm-25 {
     	width: 23%;
@@ -356,23 +368,23 @@ img.InEvidenza{
     border-right: 1px solid #dbdbd6;
     text-align: center;
     line-height: 1.1;
-	min-height: 180px;
+	min-height: 90px;
 	display:inline;
 	float:left;
 	height: 100%;
 }
 .box_data_evento span {
-    font-size: 2.4em;
+    font-size: 1.2em;
     margin: 0;
     line-height: .9;
 }
 .box_data_evento p {
-	font-size: 1.4em;
+	font-size: 1em;
     margin: 0;
     line-height: 1.1;
 }
 .box_data_evento small {
-	font-size: 1.0em;
+	font-size: 1em;
     margin: 0;
     line-height: 1.0;
 }
@@ -476,9 +488,13 @@ float:left;
     left: 50%;
     height: 2em;
 }
-.site-content li {
+.content-page li, .scuola li{
 	list-style:square!important;
-	margin-left: 1em;
+	margin-left: 2em!important;
+}
+.Visalbo li{
+	list-style:none!important;
+	margin-left: 1em!important;	
 }
 .site-content .thumbnails li{
 	list-style: none!important;
@@ -508,4 +524,9 @@ float:left;
 }
 #utilita-menu li{
 	list-style-type: none!important;
+}
+.widgetCircolari{
+	max-width: 32em!important;
+	margin-left: 2.2em;
+	padding-top: 0.5em;
 }

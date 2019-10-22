@@ -12,7 +12,7 @@
 * @package italiawp-child
 */
 get_header();?>
-  <section>
+  <section class="content-page">
        <div class="u-layout-medium u-layoutCenter u-layout-withGutter u-padding-r-top u-padding-bottom-xxl">
         <?php the_title( '<h2 class="u-text-h2">', '</h2>' ); ?>
         <div class="Grid Grid--withGutter u-padding-all-xs">

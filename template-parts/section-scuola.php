@@ -50,7 +50,7 @@
 	 }else{
 	 	$Link_Prima=get_page_link($Pag_Prima);
 	 	$Post=get_post( $Pag_Prima); 
-	 	$Testo_Prima=$Post->post_content;
+	 	$Testo_Prima=apply_filters( 'the_content', $Post->post_content);
 	 }
 	 $Eti_Seconda=get_theme_mod('Scuola_secondaTabs_testo');
 	 $Pag_Seconda=get_theme_mod('Scuola_secondaTabs_pagina');
@@ -61,7 +61,7 @@
 	 }else{
 	 	$Link_Seconda=get_page_link($Pag_Seconda);
 	 	$Post=get_post( $Pag_Seconda); 
-	 	$Testo_Seconda=$Post->post_content;
+	 	$Testo_Seconda=apply_filters( 'the_content', $Post->post_content);
 	 }
 	 $Eti_Terza=get_theme_mod('Scuola_terzaTabs_testo');
 	 $Pag_Terza=get_theme_mod('Scuola_terzaTabs_pagina');
@@ -72,7 +72,7 @@
 	 }else{
 	 	$Link_Terza=get_page_link($Pag_Terza);
 	 	$Post=get_post( $Pag_Terza); 
-	 	$Testo_Terza=$Post->post_content;
+	 	$Testo_Terza=apply_filters( 'the_content', $Post->post_content);
 	 }
 ?>
 <section class="scuola">

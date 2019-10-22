@@ -86,50 +86,51 @@ function VisualizzaAtto($id){
 		$Annullato='';
 ?>
 <section  id="DatiAtto">
-	<div class="container clearfix mb-3 pb-3">
-		<button class="btn btn-primary" onclick="window.location.href='<?php echo $_SERVER['HTTP_REFERER'];?>'"><i class="fas fa-arrow-circle-left"></i> Torna alla Lista</button>
-		<h2 class="u-text-h2 pt-3 pl-2">Dati atto</h2>
+	<div class="container clearfix">
+		<button class="Button Button--info Button--shadow u-text-r-xs u-margin-bottom-m" onclick="window.location.href='<?php echo $_SERVER['HTTP_REFERER'];?>'"><i class="fas fa-arrow-circle-left"></i> Torna alla Lista</button>
+		<h2>Dati atto</h2>
 		<?php echo ($Annullato?"<h3>'.$Annullato.'</h3>":"");?>
-	   	<div class="row">
-	   		<div class="col-12 col-xl-8">
-				<table class="table table-striped table-hove">
-				    <tbody id="dati-atto">
-					<tr>
-						<th class="w-25 text-right">Ente titolare dell'Atto</th>
-						<td class="align-middle"><?php echo stripslashes(ap_get_ente($risultato->Ente)->Nome);?></td>
-					</tr>
-					<tr>
-						<th class="w-25 text-right">Numero Albo</th>
-						<td class="align-middle"><?php echo $risultato->Numero."/".$risultato->Anno;?></td>
-					</tr>
-					<tr>
-						<th class="w-25 text-right">Codice di Riferimento</th>
-						<td class="align-middle"><?php echo stripslashes($risultato->Riferimento);?></td>
-					</tr>
-					<tr>
-						<th class="w-25 text-right">Oggetto</th>
-						<td class="align-middle"><?php echo stripslashes($risultato->Oggetto);?></td>
-					</tr>
-					<tr>
-						<th class="w-25 text-right">Data inizio Pubblicazione</th>
-						<td class="align-middle"><?php echo ap_VisualizzaData($risultato->DataInizio);?></td>
-					</tr>
-					<tr>
-						<th class="w-25 text-right">Data fine Pubblicazione</th>
-						<td class="align-middle"><?php echo ap_VisualizzaData($risultato->DataFine)?></td>
-					</tr>
-					<tr>
-						<th class="w-25 text-right">Data oblio</th>
-						<td class="align-middle"><?php echo ap_VisualizzaData($risultato->DataOblio);?></td>
-					</tr>
-					<tr>
-						<th class="w-25 text-right">Note</th>
-						<td class="align-middle"><?php echo stripslashes($risultato->Informazioni);?></td>
-					</tr>
-					<tr>
-						<th class="w-25 text-right">Categoria</th>
-						<td class="align-middle"><?php echo stripslashes($risultatocategoria->Nome)?></td>
-					</tr>
+		<div class="u-layout-wide u-layoutCenter u-layout-withGutter u-background-white">
+				<div class="Grid Grid--withGutter u-padding-all-xs u-text-r-xxs u-margin-r-right">
+					<div class="Grid-cell u-sizeFull u-size1of1 u-lg-size8of12 ">
+						<table class="table table-striped table-hove">
+						    <tbody id="dati-atto">
+							<tr>
+								<th class="d-w25 text-right" style="border-top:0;">Ente titolare dell'Atto</th>
+								<td class="align-middle"><?php echo stripslashes(ap_get_ente($risultato->Ente)->Nome);?></td>
+							</tr>
+							<tr>
+								<th class="d-w25 text-right">Numero Albo</th>
+								<td class="align-middle"><?php echo $risultato->Numero."/".$risultato->Anno;?></td>
+							</tr>
+							<tr>
+								<th class="d-w25 text-right">Codice di Riferimento</th>
+								<td class="align-middle"><?php echo stripslashes($risultato->Riferimento);?></td>
+							</tr>
+							<tr>
+								<th class="d-w25 text-right">Oggetto</th>
+								<td class="align-middle"><?php echo stripslashes($risultato->Oggetto);?></td>
+							</tr>
+							<tr>
+								<th class="d-w25 text-right">Data inizio Pubblicazione</th>
+								<td class="align-middle"><?php echo ap_VisualizzaData($risultato->DataInizio);?></td>
+							</tr>
+							<tr>
+								<th class="d-w25 text-right">Data fine Pubblicazione</th>
+								<td class="align-middle"><?php echo ap_VisualizzaData($risultato->DataFine)?></td>
+							</tr>
+							<tr>
+								<th class="d-w25 text-right">Data oblio</th>
+								<td class="align-middle"><?php echo ap_VisualizzaData($risultato->DataOblio);?></td>
+							</tr>
+							<tr>
+								<th class="d-w25 text-right">Note</th>
+								<td class="align-middle"><?php echo stripslashes($risultato->Informazioni);?></td>
+							</tr>
+							<tr>
+								<th class="d-w25 text-right">Categoria</th>
+								<td class="align-middle"><?php echo stripslashes($risultatocategoria->Nome)?></td>
+							</tr>
 <?php
 $MetaDati=ap_get_meta_atto($id);
 if($MetaDati!==FALSE){
@@ -138,22 +139,22 @@ if($MetaDati!==FALSE){
 		$Meta.="{".$Metadato->Meta."=".$Metadato->Value."} - ";
 	}
 	$Meta=substr($Meta,0,-3);?>
-					<h2 class="u-text-h2 pt-3 pl-2"><?php echo $Titolo;?></h2>
-					<tr>
-						<th>Meta Dati</th>
-						<td style="vertical-align: middle;"><?php echo $Meta;?></td>
-					</tr>
+							<h2><?php echo $Titolo;?></h2>
+							<tr>
+								<th>Meta Dati</th>
+								<td style="vertical-align: middle;"><?php echo $Meta;?></td>
+							</tr>
 <?php }?>
-		 	    </tbody>
-			</table>
-		</div>
-		<div class="col-12 col-xl-4">
+				 	    </tbody>
+					</table>
+				</div>
+				<div class="Grid-cell u-sizeFull u-size1of1 u-lg-size4of12 ">
 <?php 
 $Soggetti=unserialize($risultato->Soggetti);
 $Soggetti=ap_get_alcuni_soggetti_ruolo(implode(",",$Soggetti));
 $Ruolo="";
 if($Soggetti){
-			echo "<h3 class=\"u-text-h2 pt-3 pl-2\">Soggetti</h3>";
+			echo "<h3>Soggetti</h3>";
 }
 foreach($Soggetti as $Soggetto){
 	if(ap_get_Funzione_Responsabile($Soggetto->Funzione,"Display")=="No"){
@@ -161,9 +162,9 @@ foreach($Soggetti as $Soggetto){
 	}
 	if($Soggetto->Funzione!=$Ruolo){
 			$Ruolo=$Soggetto->Funzione;?>
-			<div class="callout mycallout">
-  				<div class="callout-title"><?php echo ap_get_Funzione_Responsabile($Soggetto->Funzione,"Descrizione"); ?></div>
- 				<div>
+					<div class="Callout Callout--could u-text-r-xs">
+		  				<h4 class="Callout-title u-text-r-l"><?php echo ap_get_Funzione_Responsabile($Soggetto->Funzione,"Descrizione"); ?></h4>
+		 				<div>
 					<?php echo $Soggetto->Cognome." ".$Soggetto->Nome;?><br />
 <?php	} 
 	if ($Soggetto->Email)
@@ -175,13 +176,13 @@ foreach($Soggetti as $Soggetto){
 	if ($Soggetto->Note)
 		echo	"Note: ".$Soggetto->Note;
 ?>
+						</div>
+					</div>
+<?php }?>
 				</div>
 			</div>
-<?php }?>
 		</div>
-	</div>
-	   	<div class="row">
-	   		<div class="col">
+	   	<div>
 			<h3 class="u-text-h2 pt-3 pb-2">Allegati</h3>
 <?php
 if (strpos(get_permalink(),"?")>0)
@@ -191,8 +192,8 @@ else
 $TipidiFiles=ap_get_tipidifiles();
 foreach ($allegati as $allegato) {
 	$Estensione=ap_ExtensionType($allegato->Allegato);?>
-		<div class="row border-dashed border-primary mb-1">
-			<div class="col-1 icona-comunicazione">
+	<div class="Grid Grid--withGutter u-margin-all-s u-border-all-xxs fb-border-tratteggiato">
+    	<div class="Grid-cell u-size1of12 u-padding-all-l">
 <?php
 	if(isset($allegato->TipoFile) and $allegato->TipoFile!="" and ap_isExtensioType($allegato->TipoFile)){
 		$Estensione=ap_ExtensionType($allegato->TipoFile);
@@ -200,8 +201,8 @@ foreach ($allegati as $allegato) {
 	}else{
 		echo '<img src="'.$TipidiFiles[strtolower($Estensione)]['Icona'].'" alt="'.$TipidiFiles[strtolower($Estensione)]['Descrizione'].'" height="30" width="30"allegato/>';
 	}?>
-			</div>
-			<div class="col-11">  				
+		</div>
+		<div class="Grid-cell u-size11of12 dt-piccolo">
 				<?php echo (isset($allegato->TitoloAllegato)?"<span class=\"font-weight-semibold Titolo\">".strip_tags($allegato->TitoloAllegato)."</span><br />":""); ?>
  <?php	if (is_file($allegato->Allegato))
 		echo '        <a href="'.ap_DaPath_a_URL($allegato->Allegato).'" class="addstatdw" rel="'.get_permalink().$sep.'action=addstatall&amp;id='.$allegato->IdAllegato.'&amp;idAtto='.$id.'" target="_blank">'. basename( $allegato->Allegato).'</a> ('.ap_Formato_Dimensione_File(filesize($allegato->Allegato)).')<br />'.htmlspecialchars_decode($TipidiFiles[strtolower($Estensione)]['Verifica']).' <a href="'.get_permalink().$sep.'action=dwnalle&amp;id='.$allegato->IdAllegato.'&amp;idAtto='.$id.'" >Scarica allegato</a>';		
@@ -210,7 +211,6 @@ foreach ($allegati as $allegato) {
 			</div>
 		</div>
 <?php	}?>
-		</div>
 		</div>
 	</div>
 </section>
@@ -280,12 +280,12 @@ function Lista_Atti($Parametri,$Categoria=0,$Numero=0,$Anno=0,$Oggetto='',$Dadat
 	$coloreDispari=get_option('opt_AP_ColoreDispari');?>
 <section  id="FiltroAtti">
 	<div class="u-layout-medium u-layoutCenter">
-		<h2 class="u-text-h2 pt-3 pl-2">Filtri</h2>
+		<h2>Filtri</h2>
 		<div class="u-layout-wide u-layoutCenter u-layout-withGutter u-background-white">
 				<div class="Accordion Accordion--default fr-accordion js-fr-accordion" id="accordion-1">
 			<div class="Grid Grid--withGutter u-padding-all-xs u-text-r-xxs u-margin-r-right">
-					<div class="Grid-cell u-sizeFull u-md-size1of2 u-lg-size1of2">
-			    		<h2 class="Accordion-header js-fr-accordion__header fr-accordion__header u-borderRadius-l u-border-all-xxs" style="width:99%;" id="accordion-header-0">
+					<div class="Grid-cell u-sizeFull u-md-size1of2 u-lg-size1of2 u-padding-bottom-xs">
+			    		<h2 class="Accordion-header js-fr-accordion__header fr-accordion__header u-borderRadius-l u-border-all-xxs u-background-10" style="width:99%;" id="accordion-header-0">
 			    			<span class="Accordion-link">Parametri</span>
 			    		</h2>
 						<div id="accordion-panel-0" class="Accordion-panel fr-accordion__panel js-fr-accordion__panel u-background-grey-10">
@@ -293,7 +293,7 @@ function Lista_Atti($Parametri,$Categoria=0,$Numero=0,$Anno=0,$Oggetto='',$Dadat
 						</div>
 					</div>
 					<div class="Grid-cell u-sizeFull u-md-size1of2 u-lg-size1of2">
-			    		<h2 class="Accordion-header js-fr-accordion__header fr-accordion__header u-borderRadius-l u-border-all-xxs"  style="width:99%;" id="accordion-header-1">
+			    		<h2 class="Accordion-header js-fr-accordion__header fr-accordion__header u-borderRadius-l u-border-all-xxs u-background-10"  style="width:99%;" id="accordion-header-1">
 			    			<span class="Accordion-link">Categorie</span>
 			    		</h2>
 						<div id="accordion-panel-1" class="Accordion-panel fr-accordion__panel js-fr-accordion__panel u-background-grey-10">
@@ -329,38 +329,68 @@ if ($TotAtti>$N_A_pp){
 		if ($TotAtti%$N_A_pp>0){
 			$Npag++;
 		}
-		$Nav.= '<div> 
-    		<strong>N. Atti '.$TotAtti.'</strong>
-	     		<ul class="page-numbers" id="PagineAlboOnLine">';
+		$Nav.= '<nav role="navigation" aria-label="Navigazione paginata" class="u-layout-prose">
+    <ul class="Grid Grid--fit Grid--alignMiddle">
+		<li class="Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock">
+			<strong>N. Atti '.$TotAtti.'</strong>
+        </li>';
      	if (isset($_REQUEST['Pag']) And $_REQUEST['Pag']>1 ){
  			$Pagcur=$_REQUEST['Pag'];
 			$PagPre=$Pagcur-1; 
-				$Nav.= '<li><a href="'.$Para.'1" class="prev page-numbers" title="Vai alla prima pagina"><i class="it-arrow-left-triangle"></i></a></li>
-					  <li><a href="'.$Para.$PagPre.'" class="page-numbers" title="Vai alla pagina precedente"><i class="it-chevron-left"></i></a></li> ';
+				$Nav.= '<li class="Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock"><a href="'.$Para.'1" title="Vai alla prima pagina" class="u-color-50 u-textClean u-block u-md-inlineBlock u-lg-inlineBlock"><i class="fas fa-angle-double-left"></i></a></li>
+					  <li class="Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock"><a href="'.$Para.$PagPre.'" title="Vai alla pagina precedente" class="u-color-50 u-textClean u-block u-md-inlineBlock u-lg-inlineBlock"><i class="fas fa-angle-left"></i></a></li> ';
 		}else{
+				$Nav.= '<li class="Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock"><i class="fas fa-angle-double-left u-color-grey-40  u-block u-md-inlineBlock u-lg-inlineBlock"></i></li>
+					  <li class="Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock"><i class="fas fa-angle-left u-color-grey-40  u-block u-md-inlineBlock u-lg-inlineBlock"></i></a></li> ';			
 			$Pagcur=1;
 		}
-		if($Pagcur<3){
-			$MInf=1;
-			$MSup=($Npag<5?$Npag:5);
-		}else{
-			$MInf=$Pagcur-2;
-			$MSup=($Pagcur+2>$Npag?$Npag:$Pagcur+2);		
+		switch($Npag){
+			case 1:
+				$Inf=1;
+				$Sup=1;
+				break;
+			case 2:
+				$Inf=1;
+				$Sup=2;
+				break;
+			default:
+				if($Pagcur<$Npag){
+					if($Pagcur<2){
+						$Inf=1;
+						$Sup=3;
+					}else{
+						$Inf=$Pagcur-1;
+						$Sup=$Pagcur+1;
+					}			
+				}else{
+						$Inf=$Npag-2;
+						$Sup=$Npag;			
+				}
+				break;
 		}
-		for($i=$MInf;$i<$MSup+1;$i++){
+		for($i=$Inf;$i<$Sup+1;$i++){
 			if($i==$Pagcur){
-				$Nav.= "<li><span aria-current=\"page\" class=\"page-numbers current\" title=\"Sei gi&agrave; nella prima pagina\">".$i."</span></li>";
+				$Nav.= "<li class=\"Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock\">
+					<span class=\"u-padding-r-all u-block u-background-50 u-color-white\"><span class=\"u-text-r-s\">".$i."</span></li>";
 			}else{
-				$Nav.= "<li><a class=\"page-numbers\" href=\"".$Para.$i."\">".$i."</a>";
+				$Nav.= "<li class=\"Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock\"><a href=\"".$Para.$i."\" class=\"u-color-50 u-textClean u-block u-md-inlineBlock u-lg-inlineBlock\">".$i."</a></li>";
 			}
 		}
-   		if (isset($_REQUEST['Pag']) And $_REQUEST['Pag']<$Npag ){
+   		if ($Npag>0 ){
    			$PagSuc=($Pagcur==$Npag?$Npag:$Pagcur+1);
- 			$Nav.= '<li><a href="'.$Para.$PagSuc.'" class="next page-numbers" title="Vai alla pagina successiva"><i class="it-chevron-right"></i></a></li>
-				  <li><a href="'.$Para.$Npag.'" class="next page-numbers" title="Vai all\'ultima pagina"><i class="it-arrow-right-triangle"></i></a>';
+ 			$Nav.= '<li class="Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock">';
+ 			if (isset($_REQUEST['Pag']) And $_REQUEST['Pag']<$Npag)
+ 				$Nav.= '<a href="'.$Para.$PagSuc.'" title="Vai alla pagina successiva"><i class="fas fa-angle-right u-color-50 u-textClean u-block u-md-inlineBlock u-lg-inlineBlock"></i></a></li>';
+ 			else
+ 				$Nav.= '<i class="fas fa-angle-right u-color-grey-40 u-block u-md-inlineBlock u-lg-inlineBlock"></i></li>';
+			$Nav.= '<li class="Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock">';
+			if (isset($_REQUEST['Pag']) And $_REQUEST['Pag']<$Npag) 
+				$Nav.= '<a href="'.$Para.$Npag.'" title="Vai all\'ultima pagina"><i class="fas fa-angle-double-right u-color-50 u-textClean u-block u-md-inlineBlock u-lg-inlineBlock"></i></a></li>';
+			else
+				$Nav.= '<i class="fas fa-angle-double-right u-color-grey-40  u-block u-md-inlineBlock u-lg-inlineBlock"></i></li>';
 		}
 		$Nav.= '</ul>
-		</div>';
+		</nav>';
 	}	
 echo $Nav;
 $FEColsOption=get_option('opt_AP_ColonneFE',array(
@@ -386,7 +416,7 @@ if(!is_array($FEColsOption)){
 				"DataOblio"=>0), json_decode($FEColsOption,TRUE),"");
 }	
 echo '	<div class="tabalbo">                               
-		<table class="table table-striped table-hover" summary="atti validi per riferimento, oggetto e categoria"> 
+		<table class="Table js-TableResponsive tablesaw tablesaw-stack" data-tablesaw-mode="stack" summary="atti validi per riferimento, oggetto e categoria"> 	
 		<thead>
 	    	<tr>
 	        	<th scope="col">Prog.</th>';

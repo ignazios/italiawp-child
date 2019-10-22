@@ -5,6 +5,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  */
+ 
 add_filter( 'posts_groupby', 'my_posts_groupby' );
 function my_posts_groupby($groupby) {
     global $wpdb;
@@ -21,11 +22,12 @@ get_header();
 
 ?>
     <section>
-        <p class="u-md-hidden u-lg-hidden u-padding-r-all u-text-m u-background-grey-20">
+ <?php if(have_posts()):?>
+ 		<p class="u-md-hidden u-lg-hidden u-padding-r-all u-text-m u-background-grey-20">
             <span class="Icon-list u-text-r-xl u-alignMiddle u-padding-r-right" aria-hidden="true"></span>
             <a href="#subnav" class="js-scrollTo u-text-r-s u-textClean u-color-grey-50 u-alignMiddle">Vai all'archivio temporale</a>
         </p>
-
+<?php endif;?>
         <div class="u-layout-wide u-layoutCenter u-layout-withGutter u-padding-r-top u-padding-bottom-xxl">
 		<?php
 		the_archive_title( '<h2 class="u-text-r-l u-padding-r-bottom">', '</h2>' );
@@ -72,17 +74,31 @@ get_header();
 			endwhile;?>
 		       </div>
 <?php 
-if(have_posts()){
-		get_template_part( 'template-parts/archive', 'nav' );
-		}else{
+if(!is_tax( 'tipologie' )){
+	if(have_posts() ) { 
+	 	get_template_part( 'template-parts/archive', 'nav' );
+	}else{
+	?>
+	<div class="Prose Alert Alert--info Alert--withIcon u-layout-prose u-padding-r-bottom u-padding-r-right u-margin-r-bottom" role="alert">
+	    <h2 class="u-text-h3">
+	        Attenzione
+	    </h2>
+	    <p class="u-text-p">non risultano articoli per questa categoria</p>
+	</div>		
+<?php }
+}else{
+	
 ?>
-		<div class="Prose Alert Alert--info Alert--withIcon u-layout-prose u-padding-r-bottom u-padding-r-right u-margin-r-bottom" role="alert">
-    <h2 class="u-text-h3">
-        Attenzione
-    </h2>
-    <p class="u-text-p">non risultano articoli per questa categoria</p>
-</div>		
-<?php }?>
+<div class="Grid-cell u-sizeFull u-md-size3of12 u-lg-size3of12">
+	<div class="italiawp-sidebar">
+			<ul class="Linklist Linklist--padded u-layout-prose u-text-r-xs">
+				<li><span class="Linklist-link Linklist-link--lev1">Amministrazione Trasparente</span></li>
+			</ul>
+<?php	the_widget("my_atWidget");?>
+		</div>
+	</div>
+</div>
+<?php } ?>
         </div>
     </section>
 

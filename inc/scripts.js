@@ -2,7 +2,7 @@ $(document).ready(function () {
     $("#wp-calendar > caption").addClass("pika-title");
     $("#wp-calendar").addClass("Table u-text-r-xs pika-table");
     $("#wp-calendar a").addClass("pika-button pika-day");
-    $("table:not(#wp-calendar)").addClass("Table Table--withBorder u-text-r-xs");
+    $("table:not(#wp-calendar)").addClass("Table u-text-r-xs");
     $(".Grid-cell.u-sizeFull.u-md-size1of4.u-lg-size1of4 > a").addClass("Leads-link u-color-black");
     $(".box-servizi a").addClass("u-textClean u-text-h3 u-color-white");
     $(".form-submit > input").addClass("Button Button--default u-text-xs");

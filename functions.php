@@ -117,6 +117,7 @@ add_filter( 'bcn_breadcrumb_url', 'filter_bcn_breadcrumb_url', 10, 3 );
 require (get_template_directory() . '-child/widget/widget.php' ); 
 add_action( 'widgets_init', 'italiawp_child_Register_Widget' );
 function italiawp_child_Register_Widget(){
+	register_widget( 'my_atWidget' );
 	register_widget( 'Articoli' );
 	register_widget( 'Comunicazioni' );
 	register_widget( 'Blocchi' );
@@ -186,8 +187,13 @@ function get_ListaCircolari($Output=False,$NumCirc=0,$Anno=0,$Mese=0){
 	$Circolari = get_posts($args);
 
 	if (empty($Circolari)){
-		if($Output)
-			echo '<p class="u-text-r-xs u-textWeight-700 u-background-40 u-color-white u-padding-left-s">Non risultano circolari per '.circ_MeseLettere($mesecorrente).' '.$annocorrente.' verranno visualizzate le ultime 5</p>';
+		if($Output){
+?>			
+		<div class="Prose Alert Alert--info Alert--withIcon u-padding-r-bottom u-padding-r-right u-margin-r-bottom" role="alert">
+  		  	<h2 class="u-text-h3">Circolari del mese</h2>
+    		<p class="u-text-p">Non risultano circolari per <?php echo circ_MeseLettere($mesecorrente).' '.$annocorrente;?> verranno visualizzate le ultime 5</p>
+		</div>
+<?php		}
 		$args = array( 'category' => $IdCircolari,
 		       'post_type' => array('post','circolari'),
 			   'posts_per_page'  => ($NumCirc==0?5:$NumCirc),
@@ -229,8 +235,13 @@ function get_ListaCircolariG($Output=False,$NumCirc=0,$Anno=0,$Mese=0){
 				   'post_status' => 'publish');
 	$Circolari = get_posts($args);
 	if (empty($Circolari)){
-		if($Output)
-			echo '<p class="u-text-r-xs u-textWeight-700 u-background-40 u-color-white u-padding-left-s">Non risultano circolari per '.gcg_MeseLettere($mesecorrente).' '.$annocorrente.' verranno visualizzate le ultime 5</p>';
+		if($Output){
+?>			
+		<div class="Prose Alert Alert--info Alert--withIcon u-padding-r-bottom u-padding-r-right u-margin-r-bottom" role="alert">
+  		  	<h2 class="u-text-h3">Circolari del mese</h2>
+    		<p class="u-text-p">Non risultano circolari per <?php echo circ_MeseLettere($mesecorrente).' '.$annocorrente;?> verranno visualizzate le ultime 5</p>
+		</div>
+<?php	}
 		$args = array( 'category' => $IdCircolari,
 		       'post_type' => array('post','circolari'),
 			   'posts_per_page'  => -1,

@@ -609,7 +609,8 @@ class my_EM_Widget_Calendar extends WP_Widget {
 //			echo $Parametri;
 			$Parametri=json_decode($Parametri);
 			$calendar_array  = EM_Calendar::get($argscal);
-		?>			<div class="clndr u-nbfc u-borderShadow-m u-xs-borderShadow-none u-borderRadius-m u-background-white em-calendar-wrapper">
+		?>
+					<div class="clndr u-nbfc u-borderShadow-m u-xs-borderShadow-none u-borderRadius-m u-background-white em-calendar-wrapper">
 					<div class="clndr-controls clearfix">
 						<div class="clndr-previous-button clearfix">
 							<span class="em-calnav u-text-r-l Icon Icon-chevron-left" data-valori="<?php echo $calendar_array['month_last']."&".$calendar_array['year_last']; ?>"></span>
@@ -670,6 +671,7 @@ class my_EM_Widget_Calendar extends WP_Widget {
 					</div>
 				</div>
 			</div>
+		<div id="loading"></div>
 <?php
 		//echo "<pre>";var_dump($instance);echo "</pre>";
 		//get events
@@ -692,7 +694,7 @@ class my_EM_Widget_Calendar extends WP_Widget {
 					$DataInizio=self::explodeDataDB($event->event_start_date);
 					$DataFine=isset($event->event_end_date)&&$event->event_end_date!=$event->event_start_date?self::explodeDataDB($event->event_end_date):"";
 	?>
-			<div class="Grid-cell u-sizeFull u-sm-size1of1 u-md-size1of3 u-lg-size1of4">
+			<div class="Grid-cell u-sizeFull u-sm-size1of1 u-md-size1of3 u-lg-size1of4 u-flex loading">
 			<div class="clndr u-nbfc u-sizeFull u-xs-padding-all-none u-borderShadow-m u-xs-borderShadow-none u-borderRadius-m u-background-white">
 				<div class="box_data_evento">
 	                <div class="box_data_calendario_number">
@@ -711,7 +713,7 @@ class my_EM_Widget_Calendar extends WP_Widget {
 	        		<h3><a href='<?php echo get_permalink($event->post_id);?>'><?php echo $event->post_title;?></a></h3>
 	        		<p><?php echo isset($event->post_excerpt)?$event->post_excerpt:$event->post_excerpt;?></p>
 	        	</div>
-	        	</div>
+	        </div>
 	        </div>
 	<?php //				echo $event->output( $args['format'] );
 				}
@@ -748,7 +750,6 @@ class my_EM_Widget_Calendar extends WP_Widget {
 			//Let month and year REQUEST override for non-JS users
 ?>
 <div  id="CalendarioEventi" class="Grid Grid--withGutter u-padding-all-xs">
-		<div id="loading"></div>
 	<div class="Grid-cell u-sizeFull u-sm-size1of1 u-md-size1of3 u-lg-size1of4 u-flex loading">
 <?php
 // Inizioalizzazione calendario al mese/anno corrente
@@ -2103,5 +2104,87 @@ if ( !empty( $urlDx )){?>
 <?php
 	}
 }
+
+class my_atWidget extends WP_Widget {
+
+    function my_atWidget() {
+        parent::__construct( 'my_atwidget', 'ItaliaWP Amministrazione Trasparente', array( 'description' => 'Personalizzazione della lista delle sezioni relative alla trasparenza per il template ItaliaWP' ) );
+    }
+
+    function widget( $args, $instance ) {
+        extract($args);
+
+		if ( $instance['logic'] && !( is_tax( 'tipologie' ) || is_singular( 'amm-trasparente' ) || is_page( at_option('page_id') )) ) {
+			return;
+		}
+
+        echo $before_widget;
+
+        echo $before_title.$instance['title'].$after_title;
+?>
+		<ul>
+			<li>
+		<div class="Accordion Accordion--default fr-accordion js-fr-accordion u-text-r-m u-padding-r-left" id="AT-ListaSezioni">
+<?php
+		foreach (amministrazionetrasparente_getarray() as $inner) {
+?>
+			<h4 class="MenuHeader Accordion-header js-fr-accordion__header fr-accordion__header d-tPiccolo" id="accordion-header-<?php echo $inner[0];?>"  style="font-size: 0.5em!important;">
+        		<span class="Accordion-link" style="font-size: 1.5em!important;"><?php echo $inner[0];?></span>
+   			 </h4>
+	   		<div id="accordion-panel-<?php echo $inner[0];?>" class="Accordion-panel fr-accordion__panel js-fr-accordion__panel">
+        		<ul class="Linklist u-text-r-xxs">
+<?php 
+		    $atreturn = '';
+		    foreach ($inner[1] as $value) {
+		        echo '<li><a href="' . get_term_link( get_term_by('name', $value, 'tipologie'), 'tipologie' ) . '" title="' . $value . '">' . $value . '</a></li>';
+		    }?>
+		    	</ul>
+		    </div>   				
+<?php	} ?>		
+		</div>
+			</li>
+		</ul>
+<?php
+
+        echo $after_widget;
+    }
+
+    function update( $new_instance, $old_instance ) {
+		delete_option( 'at_option_widget' );
+		delete_option( 'at_logic_widget' );
+
+		$instance = $old_instance;
+        $instance['title'] = strip_tags($new_instance['title']);
+        $instance['logic'] = isset($new_instance['logic']) ? 1 : 0;
+
+        return wp_parse_args( (array) $instance, self::get_defaults() );
+
+    }
+
+	 private static function get_defaults() {
+        $defaults = array(
+            'title' => 'Amministrazione Trasparente',
+            'expandable' => 0,
+            'logic' => 0
+        );
+        return $defaults;
+    }
+
+    function form( $instance ) {
+
+		$instance = wp_parse_args( (array) $instance, self::get_defaults() );
+
+        $title = esc_attr($instance['title']); ?>
+        <p><label for="<?php echo $this->get_field_id('title');?>">
+        Titolo: <input class="widefat" id="<?php echo $this->get_field_id('title');?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo $title; ?>" />
+        </label></p>
+		<p><input type="checkbox" id="<?php echo $this->get_field_id('logic');?>" name="<?php echo $this->get_field_name('logic');?>"
+		<?php checked( $instance[ 'logic' ] ); ?>/> Visualizza solo nella pagina indicata nelle impostazioni, pagina archivio e singola dei documenti</p>
+		<input type="hidden" name="submitted" value="1" />
+        <?php
+    }
+}
+
+
 
 ?>

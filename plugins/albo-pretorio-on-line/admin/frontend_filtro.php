@@ -68,7 +68,7 @@ function get_FiltriParametri($Stato=1,$cat=0,$StatoFinestra="si"){
 function get_FiltriCategorie(){
 	$lista=ap_get_categorie_gerarchica();
 	$HTMLL='<div class="ricercaCategoria">
-		<ul class="link-sublist" id="ListaCategorieAlbo">';
+		<ul class="Linklist u-text-r-xxs" id="ListaCategorieAlbo">';
 	if ($lista){
 		foreach($lista as $riga){
 		 	$shift=(((int)$riga[2])*15);
@@ -78,7 +78,7 @@ function get_FiltriCategorie(){
 	   		else
 		   		$sep="?";
 	   		if ($numAtti>0)
-	      		$HTMLL.='               <li style="text-align:left;padding-left:'.$shift.'px;font-weight: bold;"><a href="'.get_permalink().$sep.'filtra=Filtra&amp;categoria='.$riga[0].'"  >'.$riga[1].'</a> '.$numAtti.'</li>'; 
+	      		$HTMLL.='               <li><a href="'.get_permalink().$sep.'filtra=Filtra&amp;categoria='.$riga[0].'"  ><span class="u-background-70 u-color-white u-text-r-s u-padding-left-xxs u-padding-right-xxs u-borderRadius-circle"> '.$numAtti.' </span> '.$riga[1].'</a></li>'; 
 		}
 	}else{
 		$HTMLL.= '                <li>Nessuna Categoria Codificata</li>';
