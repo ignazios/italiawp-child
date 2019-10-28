@@ -9,5 +9,5 @@ http://italiawp.borisamico.it/
 https://github.com/ignazios/italiawp-child
 ## Supporto
 facebook: https://www.facebook.com/wpscuola/
-sito: eduva.org (utilizzato principalmente per test e sviluppo siti per le scuole)
-sito demo tema: https://scuola.eduva.org
+## Siti di riferimento
+demo del tema: https://scuola.eduva.org
