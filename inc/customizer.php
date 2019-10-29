@@ -15,6 +15,64 @@ if (count($pages)!=0)
 		$pagine[$pages->ID]=$pages->post_title;
 	}    
 /**
+*  Rimozione delle sezioni non utilizzate dal child
+* 
+*/	
+	$wp_customize->remove_section("site_settings");
+	
+/* Sezione "Sezioni Homepage" nel customizer */
+    $wp_customize->add_section('site_settings_child', array(
+        'title' => 'Sito & Homepage',
+        'priority' => 1,
+    ));
+    
+/* Menu Fixed */
+    $wp_customize->add_setting('menu_fixed', array(
+        'default' => true, 'capability' => 'edit_theme_options', 'sanitize_callback' => 'italiawp_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('menu_fixed', array(
+        'label' => 'Menu Fixed',
+        'type' => 'checkbox', 'section' => 'site_settings_child', 'settings' => 'menu_fixed'
+    ));
+    
+/* Settings e i controls per le sezioni */
+/* Hero */
+    $wp_customize->add_setting('active_section_hero', array(
+        'default' => false, 'capability' => 'edit_theme_options', 'sanitize_callback' => 'italiawp_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('active_section_hero', array(
+        'label' => 'Hero',
+        'type' => 'checkbox', 'section' => 'site_settings_child', 'settings' => 'active_section_hero'
+    ));
+	$wp_customize->add_setting('sfondo_hero', array(
+	    'type' => 'theme_mod',
+	    'capability' => 'edit_theme_options',
+	    'sanitize_callback' => 'absint'
+	));
+	$wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'sfondo_hero', array(
+	    'section' => 'site_settings_child',
+	    'label' => 'Immagine dim. 280x150',
+	    'width' => 1920,
+	    'height' => 480)));     
+/* Gallerie Fotografiche */
+    $wp_customize->add_setting('active_section_galleries', array(
+        'default' => false, 'capability' => 'edit_theme_options', 'sanitize_callback' => 'italiawp_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('active_section_galleries', array(
+        'label' => 'Gallerie fotografiche',
+        'type' => 'checkbox', 'section' => 'site_settings_child', 'settings' => 'active_section_galleries'
+    ));
+    
+/* Map */
+    $wp_customize->add_setting('active_section_map', array(
+        'default' => false, 'capability' => 'edit_theme_options', 'sanitize_callback' => 'italiawp_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('active_section_map', array(
+        'label' => 'Mappa',
+        'type' => 'checkbox', 'section' => 'site_settings_child', 'settings' => 'active_section_map'
+    ));
+
+/**
 * Template Home Sezione In Evidenza
 */
     $wp_customize->add_section('scuola_settings', array(
@@ -275,7 +333,7 @@ if (count($pages)!=0)
         'settings' => 'Scuola_Mappa_Link',
         'priority'	=> 27));
 }
-add_action('customize_register', 'italiawp_child_customize_register');
+add_action('customize_register', 'italiawp_child_customize_register',99);
 function italiawp_child_sanitize_number( $input ) {
     if (is_numeric($input)) { 
     	return $input; 

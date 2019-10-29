@@ -13,6 +13,8 @@
 */
 
 get_header(); 
+	if (get_theme_mod('active_section_hero'))
+	    get_template_part('template-parts/section-hero');
 if ( has_post_thumbnail() ) {
 	$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
 ?>	<div class="map-full-content">
@@ -29,7 +31,13 @@ if ( has_post_thumbnail() ) {
 		if(get_theme_mod('active_blocco_scuola')){
 		    get_template_part( 'template-parts/section', 'scuola' );
 		}
-	?>
+	   if (get_theme_mod('active_section_galleries')){
+	        if (get_theme_mod('disactive_gallerie_carousel')){
+	            get_template_part('template-parts/section-gallery');
+			}else{
+	            get_template_part('template-parts/section-gallery-carousel');
+	        }
+		}?>
 		</div>
 	<?php	
 	}

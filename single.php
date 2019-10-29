@@ -50,7 +50,7 @@ get_header();?>
                 		<i class="fas fa-hashtag u-padding-r-right"></i> <?php the_tags( '', ', '); ?>
                 	</p>  					
 					<?php endif;?>
- 				</div>
+				</div>
  					 <?php if (is_active_sidebar('sidebar-articoli')) { ?>
 					<div class="italiawp-sidebar">
 					    <?php dynamic_sidebar('sidebar-articoli'); ?>
@@ -58,6 +58,7 @@ get_header();?>
 					<?php } ?>           
 				 </div>
         </div>
+       
     </section>
 
 <?php

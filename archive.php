@@ -75,8 +75,10 @@ get_header();
 		       </div>
 <?php 
 if(!is_tax( 'tipologie' )){
-	if(have_posts() ) { 
-	 	get_template_part( 'template-parts/archive', 'nav' );
+	if(have_posts()) { 
+	 	if(get_post_type()!="gallerie"){
+	 		get_template_part( 'template-parts/archive', 'nav' );
+		}
 	}else{
 	?>
 	<div class="Prose Alert Alert--info Alert--withIcon u-layout-prose u-padding-r-bottom u-padding-r-right u-margin-r-bottom" role="alert">
