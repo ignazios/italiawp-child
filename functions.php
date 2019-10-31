@@ -21,9 +21,7 @@ function carica_stili_parent() {
    		wp_enqueue_style('parent-style-carousel', get_stylesheet_directory_uri() . '/css/carousel.css');
     	wp_enqueue_style('parent-style-galleria', get_stylesheet_directory_uri() . '/css/galleria.css');
 	}
-	if (function_exists("circolariG_Visualizza") or function_exists("VisualizzaCircolari")){	
-		wp_enqueue_style('Icone_fonts_Awesome', get_stylesheet_directory_uri() . '/font/css/all.css');		
-	}
+	wp_enqueue_style('Icone_fonts_Awesome', get_stylesheet_directory_uri() . '/font/css/all.css');		
 }
 
 // add the filter 
@@ -48,6 +46,7 @@ function italiawp_child_Head(){
 ?>
     <!-- Custom <head> content -->
 <?php if (is_admin_bar_showing ()) {
+if(get_theme_mod('menu_fixed')){
 		if(get_option('dettagli-nome-ammin-afferente')!=""){ ?>
 		    <style type="text/css">
 				.Header-banner{
@@ -65,6 +64,7 @@ function italiawp_child_Head(){
 			</style>
 <?php 	}
 	}
+}
 	if (is_front_page()){
 ?>
 <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
