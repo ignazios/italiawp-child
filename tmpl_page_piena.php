@@ -62,11 +62,7 @@ if ( trim(str_replace('&nbsp;','',strip_tags(get_the_content()))) != '' ) {
 		echo '<div class="Grid-cell u-md-size12of12 u-lg-size12of12">';	
 	}
     
-    if($Are_Child){
-    	get_template_part( 'template-parts/content', 'page_piena' );
-	}else{
-		get_template_part( 'template-parts/content', 'page_no_nav' );
-	}
+    get_template_part( 'template-parts/content', 'page' );
     // If comments are open or we have at least one comment, load up the comment template.
     if ( comments_open() || get_comments_number() ) :
         comments_template();
