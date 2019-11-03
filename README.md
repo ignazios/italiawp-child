@@ -7,6 +7,8 @@ http://eduva.org/depo/Istruzioni_child_WP_Italia.pdf
 http://italiawp.borisamico.it/
 ## Tema child
 https://github.com/ignazios/italiawp-child
+## Scarica il tema child
+https://github.com/ignazios/italiawp-child/italiawp-child.zip
 ## Supporto
 facebook: https://www.facebook.com/wpscuola/
 ## Siti di riferimento
