@@ -1,4 +1,3 @@
-~Current Version:0.0.2~
 # italiawp-child
 Template child di ItaliaWP
 ![Logo](http://eduva.org/depo/LogoTemplateScuolaEsteso.png)
@@ -9,7 +8,7 @@ http://italiawp.borisamico.it/
 ## Tema child
 https://github.com/ignazios/italiawp-child
 ## Scarica il tema child
-https://github.com/ignazios/italiawp-child/italiawp-child.zip
+https://raw.githubusercontent.com/ignazios/italiawp-child/master/italiawp-child.zip
 ## Supporto
 facebook: https://www.facebook.com/wpscuola/
 ## Siti di riferimento
