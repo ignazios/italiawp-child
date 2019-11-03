@@ -6,6 +6,13 @@
  *
  * @package italiawp-child
  */
+ /* UPDATER THEME VERSION */
+require 'inc/theme-update-checker.php';
+$update_checker = new ThemeUpdateChecker(
+    'italiawp-child',
+    'https://raw.githubusercontent.com/ignazios/italiawp-child/master/italiawp-child.json'
+);
+
 add_action('wp_enqueue_scripts', 'carica_stili_parent');
 function carica_stili_parent() {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
