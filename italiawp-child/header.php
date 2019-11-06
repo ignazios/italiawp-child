@@ -81,10 +81,21 @@
     <header class="Header u-hiddenPrint">    
     <?php } ?>
 
-        <?php if(get_option('dettagli-nome-ammin-afferente')!="") { ?>
+        <?php if(get_theme_mod('dettagli-nome-ammin-afferente')!="" or get_theme_mod('dettagli-logo-ammin-afferente')!="") { ?>
         <div class="Header-banner" id="Header-banner">
             <div class="Header-owner Headroom-hideme ">
-                <a href="<?php echo get_option('dettagli-url-ammin-afferente'); ?>"><span><img class="custom-logo" alt="Logo Miur" itemprop="logo" src="<?php echo get_stylesheet_directory_uri() . '/img/logoMIUR.png'; ?>"></span></a>
+                <a href="<?php echo get_option('dettagli-url-ammin-afferente'); ?>">
+                	<span>
+            <?php if(get_theme_mod('dettagli-logo-ammin-afferente')!=""){
+            	$logo=wp_get_attachment_image_src(get_theme_mod('dettagli-logo-ammin-afferente'), 'full');
+            	$logo = esc_url($logo[0]);?>
+            		<img class="custom-logo" alt="Logo <?php echo get_theme_mod('dettagli-nome-ammin-afferente');?>" itemprop="logo" src="<?php echo $logo;?>">
+            		</span>
+            	</a>
+            <?php }
+            else{
+            	echo get_theme_mod('dettagli-nome-ammin-afferente');
+             } ?>
             <?php get_template_part( 'template-parts/header', 'login' ); ?>
 			<?php get_template_part( 'template-parts/header', 'languages' ); ?>	            </div>
         </div>

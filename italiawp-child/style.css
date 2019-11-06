@@ -1,15 +1,18 @@
 /*
 Theme Name: ItaliaWP Child Theme
-Theme URI: http://italiawp.borisamico.it
-Author: Boris Amico
-Author URI: http://borisamico.it
-Description: Tema child di ItaliaWP utilizzabile per la customizzazione.
-Version: 1.0.0
+Theme URI: https://scuola.eduva.org/
+Author: Ignazio Scimone
+Author URI: https://www.eduva.org/
+Description: Tema child di ItaliaWP personalizzato per l'uso in ambito scolastico.
+Version: 0.0.3
 License: GNU AFFERO GENERAL PUBLIC LICENSE v3 or later
 License URI: https://www.gnu.org/licenses/agpl-3.0.en.html
 Template: italiawp
 Text Domain: italiawp-child
+GitHub Theme URI: https://github.com/ignazios/italiawp-child
+GitHub Branch: master
 */
+
 .Form-input > select{
 	width: auto;
 }
@@ -537,4 +540,23 @@ float:left;
 	max-width: 32em!important;
 	margin-left: 2.2em;
 	padding-top: 0.5em;
+}
+.Footer-pb, .Footer-block, .Footer-blockTitle, .Footer{
+    padding-bottom: 0!important; 
+}
+.Footer-block{
+    margin-bottom: 0!important; 
+}
+.Footer-links-mt{
+	 margin-top: 0!important; 
+}
+.Footer-links-nb{
+	 border: 0!important; 
+}
+.Footer-block-Social{
+	border-top: .1rem solid currentColor!important;
+	border-color: #ddd !important;
+}
+.Footer-block-Social h2{
+	margin-top:0;
 }

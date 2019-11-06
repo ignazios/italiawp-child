@@ -13,7 +13,199 @@ $pagine=array();
 if (count($pages)!=0)
 	foreach ($pages as $pages) {
 		$pagine[$pages->ID]=$pages->post_title;
-	}    
+	}  
+	
+/**
+* 
+* Sezione Dati Ente
+* 
+*/  
+/* Sezione "Sezioni Homepage" nel customizer */
+    $wp_customize->add_section('site_ente', array(
+        'title' => 'Dati Ente',
+        'priority' => 1,
+    ));
+
+    $wp_customize->add_setting( 'dettagli-ammin-afferente' , array('capability' => 'edit_theme_options') );
+	$wp_customize->add_control( new WP_Customize_Title_Control( $wp_customize,'dettagli-ammin-afferente', array(
+			'label'	=> "Amministrazione Afferente",
+			'section' => 'site_ente',
+			'settings' => 'dettagli-ammin-afferente',
+			'priority'	=> 1) 
+	));
+
+    $wp_customize->add_setting( 'dettagli-nome-ammin-afferente' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-nome-ammin-afferente', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Nome:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-nome-ammin-afferente',
+        'priority'	=> 3));
+    $wp_customize->add_setting( 'dettagli-url-ammin-afferente' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-url-ammin-afferente', array(
+        'type' 		=> 'text',
+        'label' 	=> 'URL (con HTTP o HTTPS):',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-url-ammin-afferente',
+        'priority'	=> 4));	
+
+	$wp_customize->add_setting('dettagli-logo-ammin-afferente', array(
+	    'type' => 'theme_mod',
+	    'capability' => 'edit_theme_options',
+	    'sanitize_callback' => 'absint'
+	));
+	$wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'dettagli-logo-ammin-afferente', array(
+	    'section' => 'site_ente',
+	    'label' => 'Immagine dim. 120x40',
+	    'width' => 120,
+	    'height' => 40,
+        'priority'	=> 5)));     
+// Titolo Contatti
+    $wp_customize->add_setting( 'dettagli-contatti' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( new WP_Customize_Title_Control( $wp_customize,'dettagli-contatti', array(
+			'label'	=> "Contatti",
+			'section' => 'site_ente',
+			'settings' => 'dettagli-contatti',
+			'priority'	=> 8) 
+	));
+// Campo URL Indirizzo
+    $wp_customize->add_setting( 'dettagli-contatti-indirizzo' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-indirizzo', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Indirizzo:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-indirizzo',
+        'priority'	=> 9));	
+// Campo URL CAP
+    $wp_customize->add_setting( 'dettagli-contatti-cap' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-cap', array(
+        'type' 		=> 'text',
+        'label' 	=> 'CAP:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-cap',
+        'priority'	=> 10));	
+// Campo URL Città
+    $wp_customize->add_setting( 'dettagli-contatti-citta' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-citta', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Città:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-citta',
+        'priority'	=> 11));
+// Campo URL Telefono
+    $wp_customize->add_setting( 'dettagli-contatti-telefono' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-telefono', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Telefono:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-telefono',
+        'priority'	=> 12));        
+// Campo URL Fax
+    $wp_customize->add_setting( 'dettagli-contatti-fax' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-fax', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Fax:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-fax',
+        'priority'	=> 13));
+// Campo URL Email
+    $wp_customize->add_setting( 'dettagli-contatti-email' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-email', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Email:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-email',
+        'priority'	=> 14));
+// Campo URL Seconda Email
+    $wp_customize->add_setting( 'dettagli-contatti-email2' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-email2', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Seconda Email:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-email2',
+        'priority'	=> 15));
+// Campo URL PEC
+    $wp_customize->add_setting( 'dettagli-contatti-pec' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-pec', array(
+        'type' 		=> 'text',
+        'label' 	=> 'PEC:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-pec',
+        'priority'	=> 16));
+// Campo URL C.F. / P.IVA
+    $wp_customize->add_setting( 'dettagli-contatti-cfpa' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-cfpa', array(
+        'type' 		=> 'text',
+        'label' 	=> 'C.F. / P.IVA:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-cfpa',
+        'priority'	=> 17));
+// Campo URL Cod. Univoco
+    $wp_customize->add_setting( 'dettagli-contatti-coduni' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-coduni', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Cod. Univoco:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-coduni',
+        'priority'	=> 18));
+// Titolo Social
+    $wp_customize->add_setting( 'dettagli-social' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( new WP_Customize_Title_Control( $wp_customize,'dettagli-social', array(
+			'label'	=> "Social",
+			'section' => 'site_ente',
+			'settings' => 'dettagli-social',
+			'priority'	=> 19) 
+	));
+// Campo Facebook
+    $wp_customize->add_setting( 'dettagli-social-facebook' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-social-facebook', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Facebook:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-social-facebook',
+        'priority'	=> 20));
+// Campo Twitter
+    $wp_customize->add_setting( 'dettagli-social-twitter' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-social-twitter', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Twitter:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-social-twitter',
+        'priority'	=> 21));
+// Campo YouTube
+    $wp_customize->add_setting( 'dettagli-social-youtube' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-social-youtube', array(
+        'type' 		=> 'text',
+        'label' 	=> 'YouTube:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-social-youtube',
+        'priority'	=> 21));
+// Campo Instagram
+    $wp_customize->add_setting( 'dettagli-social-instagram' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-social-instagram', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Instagram:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-social-instagram',
+        'priority'	=> 21));
 /**
 *  Rimozione delle sezioni non utilizzate dal child
 * 
@@ -23,7 +215,7 @@ if (count($pages)!=0)
 /* Sezione "Sezioni Homepage" nel customizer */
     $wp_customize->add_section('site_settings_child', array(
         'title' => 'Sito & Homepage',
-        'priority' => 1,
+        'priority' => 2,
     ));
     
 /* Menu Fixed */
@@ -340,4 +532,16 @@ function italiawp_child_sanitize_number( $input ) {
   } 
   return 0; 
 }
-
+if( class_exists( 'WP_Customize_Control' ) ):
+	class WP_Customize_Title_Control extends WP_Customize_Control {
+		public $type = 'title';
+ 
+		public function render_content() {
+		?>
+			<label>
+				<h2><?php echo esc_html( $this->label ); ?></h2>
+			</label>
+		<?php
+		}
+	}
+endif;

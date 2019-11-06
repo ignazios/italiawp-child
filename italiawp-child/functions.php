@@ -6,13 +6,13 @@
  *
  * @package italiawp-child
  */
- /* UPDATER THEME VERSION */
-require 'inc/theme-update-checker.php';
-$update_checker = new ThemeUpdateChecker(
-    'italiawp-child',
-    'https://raw.githubusercontent.com/ignazios/italiawp-child/master/italiawp-child.json'
-);
-
+add_action( 'admin_enqueue_scripts', 'Admin_Enqueue_Scripts' ) ;
+function Admin_Enqueue_Scripts( $hook_suffix ) {
+	wp_enqueue_style( 'italiawp-child-style', get_stylesheet_directory_uri() .'/css/styleAdmin.css');	
+}register_nav_menus( array(
+    'menu-footer-istituto' => 'Menu Footer Istituto',
+    'menu-footer-legale' => 'Menu Footer Legale'
+));
 add_action('wp_enqueue_scripts', 'carica_stili_parent');
 function carica_stili_parent() {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');

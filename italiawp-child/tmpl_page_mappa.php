@@ -22,7 +22,7 @@ get_header();?>
 						<h2 class="u-color-white u-padding-r-all">Pagine</h2>	    	 		
 					</div>
 					<ul id="MappaPagine" class="Linklist Linklist--padded u-text-r-xs">
-	               		<?php wp_list_pages ("sort_column=menu_order&title_li="); ?>
+	               		<?php wp_list_pages ("sort_column=post_title&title_li="); ?>
 	                </ul>
 	            </div>
 	        </div>
@@ -32,7 +32,7 @@ get_header();?>
 						<h2 class="u-color-white u-padding-r-all">Categorie</h2>	    	 		
 					</div>
 					<ul id="MappaPagine" class="Linklist Linklist--padded u-text-r-xs">
-	               		<?php wp_list_categories ("hide_empty=0&sort_column=menu_order&title_li="); ?>
+	               		<?php wp_list_categories ("hide_empty=0&title_li="); ?>
 	                </ul>
 	          	</div>
 	          </div>
