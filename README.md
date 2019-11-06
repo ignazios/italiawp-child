@@ -15,20 +15,12 @@ facebook: https://www.facebook.com/wpscuola/
 demo del tema: https://scuola.eduva.org
 ## Change log
 - **0.0.1**
-
--- ***Pubblicazione del tema child***
+  - ***Pubblicazione del tema child***
 - **0.0.2** 
-
--- ***Messa a punto di bug minori***
+  - ***Messa a punto di bug minori***
 - **0.0.3** 
-
--- ***Modifica Footer***
-
---- ***Inserimento menu "Menu Footer Legale"*** nel quale inserire il menu che rimanda alle pagine "Note legali" - "Privacy" - "Contatti" - "Mappa del sito"
-
---- ***Inserimento menu "Menu Footer Istituto"*** che sostituisce il vecchio "Menu Links 1"
-
--- ***Spostamento dei dati precedentemente gestiti in "Dettagli"*** in una sezione specifica di Aspetto > Personalizza > Dati Ente
-
--- ***Inserimento in Aspetto > Personalizza > Dati Ente*** la possibilità di inserire il logo dell'Amministrazione Afferente
-
+  - ***Modifica Footer***
+    - ***Inserimento menu "Menu Footer Legale"*** nel quale inserire il menu che rimanda alle pagine "Note legali" - "Privacy" - "Contatti" - "Mappa del sito"
+    - ***Inserimento menu "Menu Footer Istituto"*** che sostituisce il vecchio "Menu Links 1"
+    - ***Spostamento dei dati precedentemente gestiti in "Dettagli"*** in una sezione specifica di Aspetto > Personalizza > Dati Ente
+    - ***Inserimento in Aspetto > Personalizza > Dati Ente*** la possibilità di inserire il logo dell'Amministrazione Afferente
