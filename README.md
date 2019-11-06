@@ -8,7 +8,7 @@ http://italiawp.borisamico.it/
 ## Tema child
 https://github.com/ignazios/italiawp-child
 ## Scarica il tema child
-https://raw.githubusercontent.com/ignazios/italiawp-child/master/italiawp-child.zip
+[Pacchetto utilizzabile per la prima installazione o per l'aggiornamento manuale] (italiawp-child.zip)
 ## Supporto
 facebook: https://www.facebook.com/wpscuola/
 ## Siti di riferimento
