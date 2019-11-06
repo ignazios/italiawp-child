@@ -6,6 +6,15 @@
  *
  * @package italiawp-child
  */
+
+ /* UPDATER THEME VERSION */
+require 'inc/theme-update-checker.php';
+$update_checker = new ThemeUpdateChecker(
+    'italiawp-child',
+    'https://raw.githubusercontent.com/ignazios/italiawp-child/master/italiawp-child.json'
+);
+
+ 
 add_action( 'admin_enqueue_scripts', 'Admin_Enqueue_Scripts' ) ;
 function Admin_Enqueue_Scripts( $hook_suffix ) {
 	wp_enqueue_style( 'italiawp-child-style', get_stylesheet_directory_uri() .'/css/styleAdmin.css');	
