@@ -13,8 +13,8 @@
 */
 
 get_header(); 
-	if (get_theme_mod('active_section_hero'))
-	    get_template_part('template-parts/section-hero');
+if (get_theme_mod('active_section_hero'))
+    get_template_part('template-parts/section-hero');
 if ( has_post_thumbnail() ) {
 	$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
 ?>	<div class="map-full-content">

@@ -143,15 +143,24 @@ if (count($pages)!=0)
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-contatti-pec',
         'priority'	=> 16));
-// Campo URL C.F. / P.IVA
+// Campo URL C.F.
     $wp_customize->add_setting( 'dettagli-contatti-cfpa' , array(
 		'capability' => 'edit_theme_options') );
 	$wp_customize->add_control( 'dettagli-contatti-cfpa', array(
         'type' 		=> 'text',
-        'label' 	=> 'C.F. / P.IVA:',
+        'label' 	=> 'Codice Fiscale:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-contatti-cfpa',
         'priority'	=> 17));
+// Campo URL Partita IVA
+    $wp_customize->add_setting( 'dettagli-contatti-pipa' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-pipa', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Partita IVA:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-pipa',
+        'priority'	=> 18));
 // Campo URL Cod. Univoco
     $wp_customize->add_setting( 'dettagli-contatti-coduni' , array(
 		'capability' => 'edit_theme_options') );
@@ -160,7 +169,7 @@ if (count($pages)!=0)
         'label' 	=> 'Cod. Univoco:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-contatti-coduni',
-        'priority'	=> 18));
+        'priority'	=> 20));
 // Titolo Social
     $wp_customize->add_setting( 'dettagli-social' , array(
 		'capability' => 'edit_theme_options') );
@@ -168,7 +177,7 @@ if (count($pages)!=0)
 			'label'	=> "Social",
 			'section' => 'site_ente',
 			'settings' => 'dettagli-social',
-			'priority'	=> 19) 
+			'priority'	=> 21) 
 	));
 // Campo Facebook
     $wp_customize->add_setting( 'dettagli-social-facebook' , array(
@@ -178,7 +187,7 @@ if (count($pages)!=0)
         'label' 	=> 'Facebook:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-social-facebook',
-        'priority'	=> 20));
+        'priority'	=> 22));
 // Campo Twitter
     $wp_customize->add_setting( 'dettagli-social-twitter' , array(
 		'capability' => 'edit_theme_options') );
@@ -187,7 +196,7 @@ if (count($pages)!=0)
         'label' 	=> 'Twitter:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-social-twitter',
-        'priority'	=> 21));
+        'priority'	=> 23));
 // Campo YouTube
     $wp_customize->add_setting( 'dettagli-social-youtube' , array(
 		'capability' => 'edit_theme_options') );
@@ -196,7 +205,7 @@ if (count($pages)!=0)
         'label' 	=> 'YouTube:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-social-youtube',
-        'priority'	=> 21));
+        'priority'	=> 24));
 // Campo Instagram
     $wp_customize->add_setting( 'dettagli-social-instagram' , array(
 		'capability' => 'edit_theme_options') );
@@ -205,7 +214,7 @@ if (count($pages)!=0)
         'label' 	=> 'Instagram:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-social-instagram',
-        'priority'	=> 21));
+        'priority'	=> 25));
 /**
 *  Rimozione delle sezioni non utilizzate dal child
 * 

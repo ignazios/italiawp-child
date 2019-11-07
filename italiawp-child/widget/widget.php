@@ -975,6 +975,7 @@ class my_EM_Widget_Calendar extends WP_Widget {
  			$numelementi=isset($instance['numelementi'])?$instance['numelementi']:"";
  			$linkLT=isset($instance['leggitutto'])?$instance['leggitutto']:"";
  			$pagcircolari=isset($instance['pagcircolari'])?$instance['pagcircolari']:0;
+
 ?>
 	<div class="u-layoutCenter u-layout-withGutter u-padding-r-top <?php echo $instance['bgkcolor'];?>">
 <?php
@@ -986,8 +987,13 @@ class my_EM_Widget_Calendar extends WP_Widget {
 				$TipoCircolari="G";
 				$Circolari=get_ListaCircolariG(FALSE,$numelementi);
 				$Gruppi=gcg_get_Circolari_Gruppi("ArrayN");
+				$NumCircolari=0;
+				if (is_user_logged_in())
+					$NumCircolari=gcg_GetCircolariDaFirmare("N");
 			}else{
 				$Circolari=get_ListaCircolari(FALSE,$numelementi);
+				if (is_user_logged_in())
+					$NumCircolari=GetCircolariDaFirmare("N");				
 //				var_dump($Circolari);wp_die();
 			}
 		}	
@@ -1007,7 +1013,11 @@ class my_EM_Widget_Calendar extends WP_Widget {
     	<div class="Grid Grid--withGutter u-padding-all-xs">
 			<div class="Grid-cell u-sizeFull u-md-size1of2 u-lg-size1of2">
 				<div class="u-borderShadow-m u-borderRadius-l <?php echo $bgkcolorblocchi;?>">
-					<h2 class="<?php echo $colortitblocchi." ".$bgkcolortitblocchi;?> u-padding-r-all">Circolari</h2>	    	 		
+					<h2 class="<?php echo $colortitblocchi." ".$bgkcolortitblocchi;?> u-padding-r-all">Circolari
+			<?php if($NumCircolari>0): ?>
+				 <a href="<?php echo get_site_url();?>/wp-admin/edit.php?post_type=circolari&page=Firma"><i class="fas fa-edit u-color-white u-text-r-xxl u-padding-r-left"style="font-size:1.5em!important"  title="Ci sono <?php echo $NumCircolari;?> circolari da firmare"></i> <span class="u-text-r-s u-padding-left-xxs u-padding-right-xxs u-borderRadius-circle u-color-white" style="background-color: red;"><?php echo $NumCircolari;?></span></a> 
+			<?php endif ?>
+				 	</h2>
 		<ul id="ListaCircolari" class="Linklist Linklist--padded u-text-r-xs">
 <?php
 if(isset($Circolari)){

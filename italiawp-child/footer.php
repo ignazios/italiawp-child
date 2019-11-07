@@ -51,7 +51,8 @@ endif;?>
                          <address>
                             <?php echo get_theme_mod('dettagli-contatti-indirizzo'); ?><br>
                             <?php echo get_theme_mod('dettagli-contatti-cap'); ?>, <?php echo get_theme_mod('dettagli-contatti-citta'); ?><br><br>
-                            C.F. / P.IVA<br><?php echo get_theme_mod('dettagli-contatti-cfpa'); ?>
+                            C.F.<br><?php echo get_theme_mod('dettagli-contatti-cfpa'); ?>
+                            <?php echo (get_theme_mod('dettagli-contatti-pipa')!=""?"<br><br>P.Iva<br>".get_theme_mod('dettagli-contatti-pipa'):""); ?>
                         </address>
                     </div>
                 </div>

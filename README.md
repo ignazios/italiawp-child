@@ -24,3 +24,9 @@ demo del tema: https://scuola.eduva.org
     - ***Inserimento menu "Menu Footer Istituto"*** che sostituisce il vecchio "Menu Links 1"
     - ***Spostamento dei dati precedentemente gestiti in "Dettagli"*** in una sezione specifica di Aspetto > Personalizza > Dati Ente
     - ***Inserimento in Aspetto > Personalizza > Dati Ente*** la possibilità di inserire il logo dell'Amministrazione Afferente
+- **0.0.4** 
+  - ***Modifica Personalizzazione tema***
+    - ***Spoppiamento Campo CF PI*** adesso il Codice Fiscale e la Partita IVA sono riportati in due campi separati in Dati Ente.
+  - ***Modifica Footer***
+    - ***Spoppiamento Campo CF PI*** adesso sono riportati in due righe separate.
+  - ***Modificata l'intestazione del blocco Circolari***, in sostituzione del Widget delle circolari che visualizza il numero di circolari da firmare per gli utenti logati. Adesso viene visualizzata un link con icona ed evidenziato il numero di circolari da firmare.
