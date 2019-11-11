@@ -26,7 +26,10 @@ demo del tema: https://scuola.eduva.org
     - ***Inserimento in Aspetto > Personalizza > Dati Ente*** la possibilità di inserire il logo dell'Amministrazione Afferente
 - **0.0.4** 
   - ***Modifica Personalizzazione tema***
-    - ***Spoppiamento Campo CF PI*** adesso il Codice Fiscale e la Partita IVA sono riportati in due campi separati in Dati Ente.
+    - ***Sdoppiamento Campo CF PI*** adesso il Codice Fiscale e la Partita IVA sono riportati in due campi separati in Dati Ente.
   - ***Modifica Footer***
-    - ***Spoppiamento Campo CF PI*** adesso sono riportati in due righe separate.
+    - ***Sdoppiamento Campo CF PI*** adesso sono riportati in due righe separate.
   - ***Modificata l'intestazione del blocco Circolari***, in sostituzione del Widget delle circolari che visualizza il numero di circolari da firmare per gli utenti logati. Adesso viene visualizzata un link con icona ed evidenziato il numero di circolari da firmare.
+- **0.0.5** 
+  - ***Corretto*** errore del Widget e nella personalizzazione dell'elenco delle circolari. Veniva sempre riportato Esprimere l'adesione anche quando si trattava di Firma.
+  - ***Corretto*** Titolo del Widget Comunicazioni adesso per le circoalri viene riportato il nome della Categoria.

@@ -74,8 +74,8 @@ ob_start();
 								$entro="entro $ngiorni giorni";
 								break;
 						}
-						$sign=get_post_meta($post->ID, "_sign",TRUE);
-						if ($sign!="Firma")
+						$sign=get_post_meta($post->ID, "_firma",TRUE);
+						if ($sign!="Si")
 							$Tipo="Esprimere adesione $entro";
 						else
 							$Tipo="Firmare $entro";

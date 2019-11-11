@@ -970,8 +970,8 @@ class my_EM_Widget_Calendar extends WP_Widget {
             $colortit=isset($instance['colortit'])?$instance['colortit']:"";
             $colortitblocchi=isset($instance['colortitblocchi'])?$instance['colortitblocchi']:"";
             $bgkcolortitblocchi=isset($instance['bgkcolortitblocchi'])?$instance['bgkcolortitblocchi']:"";
- 			$catprimoblocco=isset($instance['catprimoblocco'])?$instance['catprimoblocco']:"";
- 			$catsecondoblocco=isset($instance['catsecondoblocco'])?$instance['catsecondoblocco']:"";
+			$categoria=isset($instance['catsecondoblocco'])?$instance['catsecondoblocco']:"";
+            $TitoloCategoria=get_cat_name( $categoria );
  			$numelementi=isset($instance['numelementi'])?$instance['numelementi']:"";
  			$linkLT=isset($instance['leggitutto'])?$instance['leggitutto']:"";
  			$pagcircolari=isset($instance['pagcircolari'])?$instance['pagcircolari']:0;
@@ -1059,8 +1059,8 @@ if(isset($Circolari)){
 								$entro="entro $ngiorni giorni";
 								break;
 						}
-						$sign=get_post_meta($CircolareVis->ID, "_sign",TRUE);
-						if ($sign!="Firma")
+						$sign=get_post_meta($CircolareVis->ID, "_firma",TRUE);
+						if ($sign!="Si")
 							$Tipo="<span style=\"color:red;\"><i class=\"fa fa-user-edit\"></i> Esprimere adesione ".$entro."</span>";
 						else
 							$Tipo="<span style=\"color:red;\"><i class=\"fa fa-user-edit\"></i> Firmare ".$entro."</span>";		
@@ -1158,7 +1158,7 @@ if(isset($Circolari)){
 			</div>
 			<div class="Grid-cell u-sizeFull u-md-size1of2 u-lg-size1of2">
 				<div class="u-borderShadow-m u-borderRadius-l <?php echo $bgkcolorblocchi;?>">
-					<h2 class="<?php echo $colortitblocchi." ".$bgkcolortitblocchi;?> u-padding-r-all">Avvisi</h2>	    	 		
+					<h2 class="<?php echo $colortitblocchi." ".$bgkcolortitblocchi;?> u-padding-r-all"><?php echo $TitoloCategoria;?></h2>	    	 		
 		<ul id="ListaArticoli" class="Linklist Linklist--padded u-text-r-xs">
 <?php
 	foreach($Articoli as $Articolo){
