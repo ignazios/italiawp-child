@@ -997,7 +997,7 @@ class my_EM_Widget_Calendar extends WP_Widget {
 //				var_dump($Circolari);wp_die();
 			}
 		}	
-		$args = array( 'cat' => $catsecondoblocco,
+		$args = array( 'cat' => $categoria,
 			   'posts_per_page'  => $numelementi,
 			   'post_status' => (is_user_logged_in()? array('publish','private'):'publish'));
 		$Articoli = get_posts( $args );	   
@@ -1173,7 +1173,7 @@ if(isset($Circolari)){
 			<li>
 				<div class="tab-pane-readnext">
 					<p class="u-textCenter u-text-md-right u-text-lg-right u-margin-r-top">
-	            		<a href="<?php echo get_category_link($catsecondoblocco);?>" class="u-color-white u-textClean u-text-h4">Leggi tutto <span class="Icon Icon-chevron-right"></span></a>
+	            		<a href="<?php echo get_category_link($categoria);?>" class="u-color-white u-textClean u-text-h4">Leggi tutto <span class="Icon Icon-chevron-right"></span></a>
 	        		</p>
 				</div>
 			</li>
