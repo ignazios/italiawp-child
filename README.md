@@ -14,7 +14,7 @@ facebook: https://www.facebook.com/wpscuola/
 ## Siti di riferimento
 demo del tema: https://scuola.eduva.org
 ## Change log
-- **0.0.6**
+- **0.0.7**
   - ***Corretti*** alcuni bug minori
 - **0.0.6**
   - ***Corretto*** errore del Widget Comunicazioni colonna articoli estratti da categoria
