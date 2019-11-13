@@ -4,7 +4,7 @@ Theme URI: https://scuola.eduva.org/
 Author: Ignazio Scimone
 Author URI: https://www.eduva.org/
 Description: Tema child di ItaliaWP personalizzato per l'uso in ambito scolastico.
-Version: 0.0.6
+Version: 0.0.7
 License: GNU AFFERO GENERAL PUBLIC LICENSE v3 or later
 License URI: https://www.gnu.org/licenses/agpl-3.0.en.html
 Template: italiawp
@@ -222,6 +222,9 @@ img.InEvidenza{
 	}
 	#navslider{
 		position: initial!important;
+	}
+	.site-content{
+		margin-top: -22px!important;
 	}
 }
 .clndr .clndr-controls
@@ -559,4 +562,21 @@ float:left;
 }
 .Footer-block-Social h2{
 	margin-top:0;
+}
+.sticky{
+	margin-top:-116px!important;
+}
+@media(max-width:786px) {
+	.sticky {
+	    margin-top: -82px!important;
+	}
+}
+.Hero{
+	top: 0;
+}
+.Headroom--fixed.Headroom--not-top .Header-navbar {
+    padding-top: 14px !important;
+}
+.site-content{
+	margin-top: -2px;
 }

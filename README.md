@@ -15,6 +15,8 @@ facebook: https://www.facebook.com/wpscuola/
 demo del tema: https://scuola.eduva.org
 ## Change log
 - **0.0.6**
+  - ***Corretti*** alcuni bug minori
+- **0.0.6**
   - ***Corretto*** errore del Widget Comunicazioni colonna articoli estratti da categoria
 - **0.0.5** 
   - ***Corretto*** errore del Widget e nella personalizzazione dell'elenco delle circolari. Veniva sempre riportato Esprimere l'adesione anche quando si trattava di Firma.

@@ -176,7 +176,20 @@ endif;?>
 <!--[if lte IE 9]>
 <script src="<?php bloginfo('template_url'); ?>/webtoolkit/polyfill.min.js"></script>
 <![endif]-->
+<script>
+	window.onscroll = function() {myFunction()};
 
+	var header = document.getElementById("Contenuto");
+	var sticky = 0;
+
+	function myFunction() {
+	  if (window.pageYOffset > sticky) {
+	    header.classList.add("sticky");
+	  } else {
+	    header.classList.remove("sticky");
+	  }
+	}
+</script>
 <script>__PUBLIC_PATH__ = '<?php bloginfo('template_url'); ?>/webtoolkit/'</script>
 <script src="<?php bloginfo('template_url'); ?>/webtoolkit/IWT.min.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/inc/scripts.js"></script>

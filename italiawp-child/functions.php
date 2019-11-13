@@ -69,7 +69,18 @@ if(get_theme_mod('menu_fixed')){
 					margin-top: 32px;
 				}
 				.site-content{
-					margin-top: -32px;
+					margin-top: -33px;
+				}
+				@media(max-width:786px) {
+					.site-content{
+						margin-top: -47px;
+					}
+				}
+				@media(max-width:540px) {
+					.site-content{
+						margin-top: -60px!important;
+					}
+}
 				}
 			</style>
 <?php 	}else{ ?>

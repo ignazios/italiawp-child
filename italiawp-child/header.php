@@ -76,7 +76,7 @@
     </ul>
 
     <?php if (get_theme_mod('menu_fixed')) { ?>
-    <header class="Header Headroom--fixed js-Headroom u-hiddenPrint Headroom Headroom--not-bottom Headroom--not-top Headroom--unpinned" style="position: fixed;top: 0px;">
+    <header class="Header Headroom--fixed js-Headroom u-hiddenPrint Headroom Headroom--not-bottom Headroom--not-top Headroom--unpinned" style="position: fixed;top: 0;">
     <?php }else{ ?>
     <header class="Header u-hiddenPrint">    
     <?php } ?>
@@ -209,7 +209,7 @@
         </div>
     </section>
 <section id="main">
-    <div class="site-content">
+    <div class="site-content" id="Contenuto">
 <?php
 if(!is_front_page()){
 	if(function_exists('bcn_display_list')){        
