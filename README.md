@@ -14,6 +14,12 @@ facebook: https://www.facebook.com/wpscuola/
 ## Siti di riferimento
 demo del tema: https://scuola.eduva.org
 ## Change log
+- **0.0.8**
+  - ***Corretti*** alcuni bug minori
+  - ***Corretti*** elementi relativi all'accessibilità
+	- alle***Immagini*** in fase di caricamento vengono riportati in automatico il nome del file nei campi: Testo alternativo - Titolo - Descrizione.
+	- in fase di inserimento delle ***Immagini*** nel contenuto (Post, Page, Custom Post Type, ...) viene aggiunto l'attributo alt e title anche se non indicato nel media. In questi casi viene impostato il titolo del media. 
+	- ***Sostituiti*** i tag <i> per le icone con <span>
 - **0.0.7**
   - ***Corretti*** alcuni bug minori
 - **0.0.6**

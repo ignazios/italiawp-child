@@ -26,9 +26,13 @@
 	$Classe="item active";
 	foreach($Articoli as $Articolo){
 		if ( has_post_thumbnail($Articolo->ID) ) {
-			$Immagine=get_the_post_thumbnail( $Articolo->ID, array(770,300) );
+			$attr = array(
+				'alt' => "Immagine articolo:".trim(strip_tags( $Articolo->post_title )),
+				'title' => trim(strip_tags( $Articolo->post_title )),
+				);
+			$Immagine=get_the_post_thumbnail( $Articolo->ID, array(770,300),$attr );
 		}else {
-			$Immagine='<img src="'.get_bloginfo( 'stylesheet_directory' ) . '/img/thumbnail-default.jpg">';
+			$Immagine='<img src="'.get_bloginfo( 'stylesheet_directory' ) . '/img/thumbnail-default.jpg"  alt="Immagine segnaposto" title="">';
 		}
 		if($i!=0){
 			$Classe="item";
@@ -70,10 +74,10 @@
 				   <nav id="navslider">
 						<ul class="control-box pager" >
 							<li >
-								<a data-slide="prev" href="#myCarousel" class="arrowStil"><i class="glyphicon glyphicon-chevron-left"></i></a>
+								<a data-slide="prev" href="#myCarousel" class="arrowStil" title="Carousel vai alla slide precedente"><span class="glyphicon glyphicon-chevron-left"></span></a>
 							</li>
 							<li >
-								<a data-slide="next" href="#myCarousel" class="arrowStil"><i class="glyphicon glyphicon-chevron-right"></i></a>
+								<a data-slide="next" href="#myCarousel" class="arrowStil" title="Carousel vai alla slide successiv"><span class="glyphicon glyphicon-chevron-right"></span></a>
 							</li>
 						</ul>
 					</nav>   
@@ -93,9 +97,13 @@
 	$i=0;
 	foreach($Articoli as $Articolo){
 		if ( has_post_thumbnail($Articolo->ID) ) {
-			$Immagine=get_the_post_thumbnail( $Articolo->ID, array(770,300) );
+			$attr = array(
+				'alt' => "Immagine articolo:".trim(strip_tags( $Articolo->post_title )),
+				'title' => trim(strip_tags( $Articolo->post_title )),
+			);
+			$Immagine=get_the_post_thumbnail( $Articolo->ID, array(770,300),$attr );
 		}else {
-			$Immagine='<img src="'.get_bloginfo( 'stylesheet_directory' ) . '/img/thumbnail-default.jpg">';
+			$Immagine='<img src="'.get_bloginfo( 'stylesheet_directory' ) . '/img/thumbnail-default.jpg" alt="Immagine segnaposto" title="">';
 		}
 ?>
 							<li class="col-sm-2">

@@ -37,10 +37,10 @@ ob_start();
 				$numero=get_post_meta($post->ID, "_numero",TRUE);
 				$anno=get_post_meta($post->ID, "_anno",TRUE);
 				$NumeroAtto="Numero ".$numero."_".$anno;
-				$Destinatari='<i class="fa fa-users"></i> '.$Elenco;
+				$Destinatari='<span class="fa fa-users"></span> '.$Elenco;
 			}
 			if (post_password_required( $post->ID ))
-			 	$Protetta=' <i class="fas fa-lock"></i> Contenuto Protetto';	
+			 	$Protetta=' <span class="fas fa-lock"></span> Contenuto Protetto';	
 			}else{
 				$riassunto=	$post->post_excerpt;
 			}		
@@ -52,13 +52,13 @@ ob_start();
 	            </h3>
 		<div class="u-textWeight-600">Del <?php echo FormatDataItaliano($post->post_date);?>  <?php echo $NumeroAtto;?></div> 
 			<div class="u-textWeight-600">
-					<i class="fa fa-folder-open"></i> <?php echo $post->post_type." ". $Destinatari." ".$Protetta;?>
+					<span class="fa fa-folder-open"></span> <?php echo $post->post_type." ". $Destinatari." ".$Protetta;?>
 	<?php	
 			if (Is_Circolare_Da_Firmare($post->ID))
 				if (!Is_Circolare_Firmata($post->ID)) {
 					$ngiorni=Get_scadenzaCircolare($post->ID,"",True);					
 					if(Is_Circolare_Scaduta($post->ID)){
-						echo '<span style="color:red;"><i class="fa fa-user-edit"></i> Scaduta e non Firmata</span>';						
+						echo '<span style="color:red;"><span class="fa fa-user-edit"></span> Scaduta e non Firmata</span>';						
 					}else{
 						switch ($ngiorni){
 							case -1:							
@@ -79,10 +79,10 @@ ob_start();
 							$Tipo="Esprimere adesione $entro";
 						else
 							$Tipo="Firmare $entro";
-						echo '<span style="color:red;"><i class="fa fa-user-edit"></i> '.$Tipo.'</span>';	
+						echo '<span style="color:red;"><span class="fa fa-user-edit"></span> '.$Tipo.'</span>';	
 				}			
 			}else{
-				echo '<span style="color:blue;"><i class="fa fa-user-edit"></i> Firmata</span>';				
+				echo '<span style="color:blue;"><span class="fa fa-user-edit"></span> Firmata</span>';				
 			}?>
 			</div>
 				<p class="u-lineHeight-l u-text-r-xs u-padding-r-right u-padding-top-s"><?php echo $riassunto;?></p>

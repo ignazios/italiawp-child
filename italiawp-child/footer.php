@@ -159,7 +159,7 @@ endif;?>
 </div>
 
 <a href="#" title="torna all'inizio del contenuto" class="ScrollTop js-scrollTop js-scrollTo">
-    <i class="ScrollTop-icon Icon-collapse" aria-hidden="true"></i>
+    <span class="ScrollTop-icon Icon-collapse" aria-hidden="true"></span>
     <span class="u-hiddenVisually">torna all'inizio del contenuto</span>
 </a>
 </div>

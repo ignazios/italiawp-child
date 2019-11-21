@@ -50,7 +50,7 @@
 	    <div class="u-nbfc u-color-grey-30 u-xs-padding-all-none u-sizeFull u-borderShadow-m u-borderRadius-m u-background-white BoxArchivioTop">
         	<div class="u-padding-r-all">
             	<div  style="min-height: 100px;">
-                	<h3 class="u-textWeight-400 u-text-r-xs u-color-grey-80 u-margin-r-bottom"><i class="far fa-calendar-alt"></i> Date archivio</h3>
+                	<h3 class="u-textWeight-400 u-text-r-xs u-color-grey-80 u-margin-r-bottom"><span class="far fa-calendar-alt"></span> Date archivio</h3>
  					<div class="Accordion Accordion--default fr-accordion js-fr-accordion" id="accordion-page">
 <?php			$Anno=0;
 			foreach ($ArchivioDate->posts as $Data){

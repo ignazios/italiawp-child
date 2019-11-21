@@ -65,14 +65,14 @@
         </p>
         <p>
             <button class="Button Button--default u-text-r-xxs js-cookieBarAccept u-inlineBlock u-margin-r-all">Accetto</button>
-            <a href="<?php echo get_permalink(get_option('dettagli-id-privacy')); ?>" class="u-text-r-xs">Privacy policy</a>
+            <a href="<?php echo get_permalink(get_option('dettagli-id-privacy')); ?>" class="u-text-r-xs" target="_self">Privacy policy</a>
         </p>
     </div>
 
     <ul class="Skiplinks js-fr-bypasslinks u-hiddenPrint">
-        <li><a href="#main">Vai al contenuto</a></li>
+        <li><a href="#main" target="_self">Vai al contenuto</a></li>
         <li><a class="js-fr-offcanvas-open" href="#menu"
-               aria-controls="menu" aria-label="accedi al menu" title="accedi al menu">Vai alla navigazione del sito</a></li>
+               aria-controls="menu" aria-label="accedi al menu" title="accedi al menu" target="_self">Vai alla navigazione del sito</a></li>
     </ul>
 
     <?php if (get_theme_mod('menu_fixed')) { ?>
@@ -84,7 +84,7 @@
         <?php if(get_theme_mod('dettagli-nome-ammin-afferente')!="" or get_theme_mod('dettagli-logo-ammin-afferente')!="") { ?>
         <div class="Header-banner" id="Header-banner">
             <div class="Header-owner Headroom-hideme ">
-                <a href="<?php echo get_option('dettagli-url-ammin-afferente'); ?>">
+                <a href="<?php echo get_option('dettagli-url-ammin-afferente'); ?>"  target="_self" title="Logo amministrazione afferente">
                 	<span>
             <?php if(get_theme_mod('dettagli-logo-ammin-afferente')!=""){
             	$logo=wp_get_attachment_image_src(get_theme_mod('dettagli-logo-ammin-afferente'), 'full');
@@ -104,7 +104,7 @@
         <div class="Header-navbar ">
             <div class="u-layout-wide Grid Grid--alignMiddle u-layoutCenter">
                 <div class="Header-logo Grid-cell" aria-hidden="true">
-                    <a href="<?php echo esc_url(home_url('/')); ?>" tabindex="-1">
+                    <a href="<?php echo esc_url(home_url('/')); ?>" tabindex="-1" target="_self">
                     <?php
                         $custom_logo_id = get_theme_mod('custom_logo');
                         $custom_logo = wp_get_attachment_image_src($custom_logo_id, 'full');
@@ -119,7 +119,7 @@
 
                 <div class="Header-title Grid-cell">
                     <h1 class="Header-titleLink">
-                        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+						<a href="<?php echo esc_url(home_url('/')); ?>" rel="home" target="_self" > 
                         <?php bloginfo('name');
                               $italiawp_description = get_bloginfo('description');
                               if ($italiawp_description || is_customize_preview()) : ?>
@@ -171,7 +171,7 @@
 
                 <div class="Header-toggle Grid-cell">
                     <a class="Hamburger-toggleContainer js-fr-offcanvas-open u-nojsDisplayInlineBlock u-lg-hidden u-md-hidden" href="#menu"
-                       aria-controls="menu" aria-label="accedi al menu" title="accedi al menu">
+                       aria-controls="menu" aria-label="accedi al menu" title="accedi al menu"  target="_self">
                         <span class="Hamburger-toggle" role="presentation"></span>
                         <span class="Header-toggleText" role="presentation">Menu</span>
                     </a>
@@ -191,7 +191,7 @@
         <div class="Offcanvas-content u-background-white">
             <div class="Offcanvas-toggleContainer u-background-70 u-jsHidden">
                 <a class="Hamburger-toggleContainer u-block u-color-white u-padding-bottom-xxl u-padding-left-s u-padding-top-xxl js-fr-offcanvas-close"
-                   aria-controls="menu" aria-label="esci dalla navigazione" title="esci dalla navigazione" href="#">
+                   aria-controls="menu" aria-label="esci dalla navigazione" title="esci dalla navigazione" href="#"  target="_self" >
                     <span class="Hamburger-toggle is-active" aria-hidden="true"></span>
                 </a>
             </div>

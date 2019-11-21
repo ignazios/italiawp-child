@@ -55,15 +55,15 @@ get_header();
                 <div class="u-border-top-xxs u-padding-right-xxl u-padding-r-all">
                     <p class="u-padding-r-bottom ">
  		<?php  if($categorylist!=""){?>
-                       <i class="fa fa-folder-open u-padding-r-right "></i> <?php echo $categorylist;?>
+                       <span class="fa fa-folder-open u-padding-r-right "></span> <?php echo $categorylist;?>
 							<br />
  <?php				}
 				if($taglist!=""){?>
-						<i class="fas fa-hashtag u-padding-r-right "></i> <?php echo $taglist; ?>
+						<span class="fas fa-hashtag u-padding-r-right "></span> <?php echo $taglist; ?>
 							<br />
  <?php				
 				}?>
-                        <i class="far fa-calendar-alt u-padding-r-right "></i> <?php the_time( get_option( 'date_format' ) ); ?>
+                        <span class="far fa-calendar-alt u-padding-r-right "></span> <?php the_time( get_option( 'date_format' ) ); ?>
                     </p>
                     <h3 class="u-padding-r-top u-padding-r-bottom"><a class="u-text-h4 u-textClean u-color-black" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </h3>

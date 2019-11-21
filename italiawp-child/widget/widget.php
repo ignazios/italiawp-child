@@ -37,8 +37,8 @@ class GalleriaLinks extends WP_Widget {
 			$Num=0;
 			$Primo=" active";
 			foreach($Links as $Link){
-				if ($Num==0){
-?>								<div class="item<?php echo $Primo;?>">
+				if ($Num==0){?>
+								<div class="item<?php echo $Primo;?>">
 								<ul class="thumbnails">
 <?php				}
 				$Primo="";
@@ -55,11 +55,13 @@ class GalleriaLinks extends WP_Widget {
 									<li class="col-sm-25 u-borderShadow-xs u-border-all-xxs u-padding-all-m">
 										<div class="casing">
 											<div class="noBorder thumbnail" style="height:120px;">
-												<a href="<?php echo $Link->link_url.'" '.$StileNoExt;?>><img src="<?php echo $Link->link_image;?>" alt="" <?php echo $StileM;?>"></a>	
+												<a href="<?php echo $Link->link_url.'" '.$StileNoExt;?> target="<?php echo $Link->link_target;?>" alt="link a <?php echo $Link->link_name;?>" title="Link a <?php echo $Link->link_name;?>">
+													<img src="<?php echo $Link->link_image;?>" alt="Logo: <?php echo $Link->link_name;?>" <?php echo $StileM;?>">				
+												</a>	
 											</div>
 											<div class="caption" style="height:180px;">
-												<h3><a href="<?php echo $Link->link_url.'" '.$StileNoExt;?>><?php echo $Link->link_name;?></a></h3>
-												<p class="riassunto"><a href="<?php echo $Link->link_url.'" '.$StileNoExt;?>><?php echo $Link->link_description;?></a></p>
+												<h3><a href="<?php echo $Link->link_url.'" '.$StileNoExt;?> alt="Logo: <?php echo $Link->link_name;?>" title="Logo: <?php echo $Link->link_name;?>"><?php echo $Link->link_name;?></a></h3>
+												<p class="riassunto"><a href="<?php echo $Link->link_url.'" '.$StileNoExt;?> target="<?php echo $Link->link_target;?>" alt="link a <?php echo $Link->link_name;?>" title="Link a <?php echo $Link->link_name;?>"><?php echo $Link->link_description;?></a></p>
 											</div>
 										</div>
 									</li>
@@ -80,10 +82,10 @@ class GalleriaLinks extends WP_Widget {
 				   <nav>
 						<ul class="control-box pager">
 							<li class="left">
-								<a data-slide="prev" href="#<?php echo $idW;?>" class="arrowStil"><i class="glyphicon glyphicon-chevron-left"></i></a>
+								<a data-slide="prev" href="#<?php echo $idW;?>" class="arrowStil" title="Galleria Link vai alla pagina precedente"><span class="glyphicon glyphicon-chevron-left"></span></a>
 							</li>
 							<li class="right">
-								<a data-slide="next" href="#<?php echo $idW;?>" class="arrowStil"><i class="glyphicon glyphicon-chevron-right"></i></a>
+								<a data-slide="next" href="#<?php echo $idW;?>" class="arrowStil" title="Galleria Link vai alla pagina precedente"><span class="glyphicon glyphicon-chevron-right"></span></a>
 							</li>
 						</ul>
 					</nav>
@@ -178,10 +180,14 @@ class Blocchi extends WP_Widget {
 				if($Valori['Link'] !="" And $Valori['Img']!=""){
 					$nBlocchi++;
 					$indice='Blocco'.$Index;
+					if($Valori['NF'])
+						$destinazione='target="_blank"';
+					else
+						$destinazione="";
 					$$indice='	
 	<div class="Grid-cell u-sizeFull u-md-size1of2 u-lg-size1of4">
 		<div class="'.$bgkcolorblocchi.' u-margin-bottom-l u-borderRadius-m u-padding-all-m">
-			<a href="'.$Valori['Link'].'" '.$StileAC.' '.$StileA.'><img src="'.$Valori['Img'].'" style="'.$StileM.'"/></a><br />
+			<a href="'.$Valori['Link'].'" '.$StileAC.' '.$StileA.' '.$destinazione.'><img src="'.$Valori['Img'].'" alt="'.$Valori['Alt'].'" style="'.$StileM.'"/></a><br />
 			<h2 id="'.str_replace(" ","_",strtolower($Valori['Titolo'])).'" class="'.$colortitblocchi.' ServiziTitle u-layout-centerLeft u-text-r-s">'.$Valori['Titolo'].'</h2>
 		</div>
     </div>';
@@ -209,8 +215,10 @@ class Blocchi extends WP_Widget {
             $Blocchi=array();
             for($i=1;$i<5;$i++){
 			   $Blocchi[]=array("Img"=>isset($new_instance["Img$i"])?$new_instance["Img$i"]:"",
-			                   "Link"=>isset($new_instance["Link$i"])?$new_instance["Link$i"]:"",
-			                 "Titolo"=>isset($new_instance["Titolo$i"])?$new_instance["Titolo$i"]:"");
+			                   	"Link"=>isset($new_instance["Link$i"])?$new_instance["Link$i"]:"",
+			                 	"Titolo"=>isset($new_instance["Titolo$i"])?$new_instance["Titolo$i"]:"",
+			                 	"Alt"=>isset($new_instance["Alt$i"])?$new_instance["Alt$i"]:"",
+			                 	"NF"=>isset($new_instance["NF$i"])?$new_instance["NF$i"]:"");
 			}
             $instance['blocchi'] = strip_tags(serialize($Blocchi));
             $instance['bgkcolor']=strip_tags($new_instance['bgkcolor']);
@@ -226,10 +234,10 @@ class Blocchi extends WP_Widget {
             if(isset($instance['blocchi'])){
             	$Blocchi=unserialize($instance['blocchi']);
 			}else{
-				$Blocchi=array( array("Img"=>"","Link"=>"","Titolo"=>""),
-								array("Img"=>"","Link"=>"","Titolo"=>""),
-								array("Img"=>"","Link"=>"","Titolo"=>""),
-								array("Img"=>"","Link"=>"","Titolo"=>""));
+				$Blocchi=array( array("Img"=>"","Link"=>"","Titolo"=>"","Alt"=>""),
+								array("Img"=>"","Link"=>"","Titolo"=>"","Alt"=>""),
+								array("Img"=>"","Link"=>"","Titolo"=>"","Alt"=>""),
+								array("Img"=>"","Link"=>"","Titolo"=>"","Alt"=>""));
 			}
 			$bgkcolor=isset($instance['bgkcolor'])?$instance['bgkcolor']:"";
             $bgkcolorblocchi=isset($instance['bgkcolorblocchi'])?$instance['bgkcolorblocchi']:"";
@@ -351,6 +359,11 @@ class Blocchi extends WP_Widget {
      <br />
         <label for="<?php echo $this->get_field_id( 'Titolo1' );?>">Titolo:</label>
 		<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'Titolo1' );?>" name="<?php echo $this->get_field_name( 'Titolo1' );?>" value="<?php echo esc_attr($Blocchi[0]['Titolo']); ?>" />
+     <br />
+        <label for="<?php echo $this->get_field_id( 'Alt1' );?>">Testo alternativo:</label>
+		<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'Alt1' );?>" name="<?php echo $this->get_field_name( 'Alt1' );?>" value="<?php echo esc_attr($Blocchi[0]['Alt']); ?>" />
+        <label for="<?php echo $this->get_field_id( 'NF1' );?>">Apertura link in una nuova scheda:</label>
+		<input type="checkbox" id="<?php echo $this->get_field_id('NF1'); ?>" name="<?php echo $this->get_field_name('NF1'); ?>" value="1" <?php echo ($Blocchi[0]['NF'] == '1') ? 'checked="checked"':''; ?>/>
      </div>
 
      <div class="Servizi">
@@ -363,6 +376,11 @@ class Blocchi extends WP_Widget {
      <br />
         <label for="<?php echo $this->get_field_id( 'Titolo2' );?>">Titolo:</label>
 		<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'Titolo2' );?>" name="<?php echo $this->get_field_name( 'Titolo2' );?>" value="<?php echo esc_attr($Blocchi[1]['Titolo']); ?>" />
+     <br />
+        <label for="<?php echo $this->get_field_id( 'Alt2' );?>">Testo alternativo:</label>
+		<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'Alt2' );?>" name="<?php echo $this->get_field_name( 'Alt2' );?>" value="<?php echo esc_attr($Blocchi[1]['Alt']); ?>" />
+        <label for="<?php echo $this->get_field_id( 'NF2' );?>">Apertura link in una nuova scheda:</label>
+		<input type="checkbox" id="<?php echo $this->get_field_id('NF2'); ?>" name="<?php echo $this->get_field_name('NF2'); ?>" value="1" <?php echo ($Blocchi[1]['NF'] == '1') ? 'checked="checked"':''; ?>/>
      </div>
 
      <div class="Servizi">
@@ -375,6 +393,11 @@ class Blocchi extends WP_Widget {
      <br />
         <label for="<?php echo $this->get_field_id( 'Titolo3' );?>">Titolo:</label>
 		<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'Titolo3' );?>" name="<?php echo $this->get_field_name( 'Titolo3' );?>" value="<?php echo esc_attr($Blocchi[2]['Titolo']); ?>" />
+     <br />
+        <label for="<?php echo $this->get_field_id( 'Alt3' );?>">Testo alternativo:</label>
+		<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'Alt3' );?>" name="<?php echo $this->get_field_name( 'Alt3' );?>" value="<?php echo esc_attr($Blocchi[2]['Alt']); ?>" />
+        <label for="<?php echo $this->get_field_id( 'NF3' );?>">Apertura link in una nuova scheda:</label>
+		<input type="checkbox" id="<?php echo $this->get_field_id('NF3'); ?>" name="<?php echo $this->get_field_name('NF3'); ?>" value="1" <?php echo ($Blocchi[2]['NF'] == '1') ? 'checked="checked"':''; ?>/>
      </div>
  
      <div class="Servizi">
@@ -387,6 +410,11 @@ class Blocchi extends WP_Widget {
      <br />
         <label for="<?php echo $this->get_field_id( 'Titolo4' );?>">Titolo:</label>
 		<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'Titolo4' );?>" name="<?php echo $this->get_field_name( 'Titolo4' );?>" value="<?php echo esc_attr($Blocchi[3]['Titolo']); ?>" />
+     <br />
+        <label for="<?php echo $this->get_field_id( 'Alt4' );?>">Testo alternativo:</label>
+		<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'Alt4' );?>" name="<?php echo $this->get_field_name( 'Alt4' );?>" value="<?php echo esc_attr($Blocchi[3]['Alt']); ?>" />
+        <label for="<?php echo $this->get_field_id( 'NF4' );?>">Apertura link in una nuova scheda:</label>
+		<input type="checkbox" id="<?php echo $this->get_field_id('NF4'); ?>" name="<?php echo $this->get_field_name('NF4'); ?>" value="1" <?php echo ($Blocchi[3]['NF'] == '1') ? 'checked="checked"':''; ?>/>
      </div>
       <?php
         }
@@ -1015,7 +1043,7 @@ class my_EM_Widget_Calendar extends WP_Widget {
 				<div class="u-borderShadow-m u-borderRadius-l <?php echo $bgkcolorblocchi;?>">
 					<h2 class="<?php echo $colortitblocchi." ".$bgkcolortitblocchi;?> u-padding-r-all">Circolari
 			<?php if($NumCircolari>0): ?>
-				 <a href="<?php echo get_site_url();?>/wp-admin/edit.php?post_type=circolari&page=Firma"><i class="fas fa-edit u-color-white u-text-r-xxl u-padding-r-left"style="font-size:1.5em!important"  title="Ci sono <?php echo $NumCircolari;?> circolari da firmare"></i> <span class="u-text-r-s u-padding-left-xxs u-padding-right-xxs u-borderRadius-circle u-color-white" style="background-color: red;"><?php echo $NumCircolari;?></span></a> 
+				 <a href="<?php echo get_site_url();?>/wp-admin/edit.php?post_type=circolari&page=Firma"><span class="fas fa-edit u-color-white u-text-r-xxl u-padding-r-left" style="font-size:1.5em!important"  title="Ci sono <?php echo $NumCircolari;?> circolari da firmare"></span> <span class="u-text-r-s u-padding-left-xxs u-padding-right-xxs u-borderRadius-circle u-color-white" style="background-color: red;"><?php echo $NumCircolari;?></span></a> 
 			<?php endif ?>
 				 	</h2>
 		<ul id="ListaCircolari" class="Linklist Linklist--padded u-text-r-xs">
@@ -1036,14 +1064,14 @@ if(isset($Circolari)){
 				$Elenco=substr($Elenco,0,strlen($Elenco)-3);
 			}
 			if (!empty($CircolareVis->post_password))
-				$Protetto= '<i class="fas fa-lock"></i> Contenuto Protetto';
+				$Protetto= '<span class="fas fa-lock"></span> Contenuto Protetto';
 			else
 				$Protetto="";
 			if (Is_Circolare_Da_Firmare($CircolareVis->ID))
 				if (!Is_Circolare_Firmata($CircolareVis->ID)) {
 					$ngiorni=Get_scadenzaCircolare($CircolareVis->ID,"",True);					
 					if(Is_Circolare_Scaduta($CircolareVis->ID)){
-						$Tipo='<span style="color:red;"><i class="fa fa-user-edit"></i> Scaduta e non Firmata</span>';						
+						$Tipo='<span style="color:red;"><span class="fa fa-user-edit"></span> Scaduta e non Firmata</span>';						
 					}else{
 						switch ($ngiorni){
 							case -1:							
@@ -1061,19 +1089,19 @@ if(isset($Circolari)){
 						}
 						$sign=get_post_meta($CircolareVis->ID, "_firma",TRUE);
 						if ($sign!="Si")
-							$Tipo="<span style=\"color:red;\"><i class=\"fa fa-user-edit\"></i> Esprimere adesione ".$entro."</span>";
+							$Tipo="<span style=\"color:red;\"><span class=\"fa fa-user-edit\"></span> Esprimere adesione ".$entro."</span>";
 						else
-							$Tipo="<span style=\"color:red;\"><i class=\"fa fa-user-edit\"></i> Firmare ".$entro."</span>";		
+							$Tipo="<span style=\"color:red;\"><span class=\"fa fa-user-edit\"></span> Firmare ".$entro."</span>";		
 					}
 				}else{
-					$Tipo="<span style=\"color:blue;\"><i class=\"fa fa-user-edit\"></i> Firmata</span>";
+					$Tipo="<span style=\"color:blue;\"><span class=\"fa fa-user-edit\"></span> Firmata</span>";
 				}
 			echo "<li><p><a href=\"".get_permalink($CircolareVis->ID)."\">".$CircolareVis->post_title."</a>
 				<p class=\"u-textWeight-600;\">
 				Del ".FormatDataItaliano($CircolareVis->post_date).($numero!=""?" Numero ".$numero."_".$anno:"")."<br />
-			<i class=\"fa fa-folder-open\"></i> ".$CircolareVis->post_type." "; 
+			<span class=\"fa fa-folder-open\"></span> ".$CircolareVis->post_type." "; 
 			if($CircolareVis->post_type!="post"){
-				echo "<i class=\"fa fa-users\"></i> ".$Elenco." ";
+				echo "<span class=\"fa fa-users\"></span> ".$Elenco." ";
 			}
 			if($Protetto){
 				echo $Protetto;
@@ -1096,14 +1124,14 @@ if(isset($Circolari)){
 				}
 			}
 			if (!empty($CircolareVis->post_password))
-				$Protetto= '<i class="fas fa-lock"></i> Contenuto Protetto';
+				$Protetto= '<span class="fas fa-lock"></span> Contenuto Protetto';
 			else
 				$Protetto="";
 			if (($post->post_type=="circolari") && gcg_Is_Circolare_Da_Firmare($CircolareVis->ID)){
 				if (!gcg_Is_Circolare_Firmata($CircolareVis->ID)) {
 					$ngiorni=gcg_GetscadenzaCircolare($CircolareVis->ID,"",True);		
 					if(gcg_Is_Circolare_Scaduta($CircolareVis->ID)){
-						$Tipo='<span style="color:red;"><i class="fa fa-user-edit"></i> Scaduta e non Firmata</span>';
+						$Tipo='<span style="color:red;"><span class="fa fa-user-edit"></span> Scaduta e non Firmata</span>';
 					}else{
 						switch ($ngiorni){
 							case -1:							
@@ -1127,15 +1155,15 @@ if(isset($Circolari)){
 	                    		$Tipo="Esprimere scelta $entro";
 					}
 				}else{
-					$Tipo="<span style=\"color:blue;\"><i class=\"fa fa-user-edit\"></i> Firmata</span>";
+					$Tipo="<span style=\"color:blue;\"><span class=\"fa fa-user-edit\"></span> Firmata</span>";
 				}
 			}
 			echo "<li><p><a href=\"".get_permalink($CircolareVis->ID)."\">".$CircolareVis->post_title."</a>
 				<p class=\"u-textWeight-600;\">
 				Del ".gcg_FormatDataItaliano($CircolareVis->post_date).($numero!=""?" Numero ".$numero."_".$anno:"")."<br />
-			<i class=\"fa fa-folder-open\"></i> ".$CircolareVis->post_type." "; 
+			<span class=\"fa fa-folder-open\"></span> ".$CircolareVis->post_type." "; 
 			if($CircolareVis->post_type!="post"){
-				echo "<i class=\"fa fa-users\"></i> ".$Elenco." ";
+				echo "<span class=\"fa fa-users\"></span> ".$Elenco." ";
 			}
 			if($Tipo){
 				echo "<br />".$Tipo."</p>";
@@ -1159,14 +1187,14 @@ if(isset($Circolari)){
 			<div class="Grid-cell u-sizeFull u-md-size1of2 u-lg-size1of2">
 				<div class="u-borderShadow-m u-borderRadius-l <?php echo $bgkcolorblocchi;?>">
 					<h2 class="<?php echo $colortitblocchi." ".$bgkcolortitblocchi;?> u-padding-r-all"><?php echo $TitoloCategoria;?></h2>	    	 		
-		<ul id="ListaArticoli" class="Linklist Linklist--padded u-text-r-xs">
+		<ul id="ListaArticoliComunicazioni" class="Linklist Linklist--padded u-text-r-xs">
 <?php
 	foreach($Articoli as $Articolo){
 		//var_dump($Articolo);
 		echo "<li><a href=\"".get_permalink($Articolo->ID)."\">".$Articolo->post_title."</a>
 			<p class=\"u-textWeight-600;\">
 			Del ".IWP_FormatDataItaliano($Articolo->post_date)."<br />
-		<i class=\"fas fa-user-edit\"></i> ".get_the_author_meta('display_name', $Articolo->post_author)."</p>
+		<span class=\"fas fa-user-edit\"></span> ".get_the_author_meta('display_name', $Articolo->post_author)."</p>
 		</li>";
 	}
 	if($linkLT){?>
@@ -1471,14 +1499,14 @@ if ( post_type_exists( 'circolari' ) ) {
     		<div class="Grid-cell u-sizeFull u-md-size1of2 u-lg-size1of2">
 				<div class="u-borderShadow-m u-borderRadius-l <?php echo $bgkcolorblocchi;?>">
 					<h2 class="<?php echo $colortitblocchi." ".$bgkcolortitblocchi;?> u-padding-r-all"><?php echo $TitoloPB;?></h2>    	 		
-		<ul id="ListaArticoli" class="Linklist Linklist--padded u-text-r-xs">
+		<ul id="ListaArticoliSx" class="Linklist Linklist--padded u-text-r-xs">
 <?php
 	foreach($ArticoliPB as $Articolo){
 		//var_dump($Articolo);
 		echo "<li><a href=\"".get_permalink($Articolo->ID)."\">".$Articolo->post_title."</a>
 			<p class=\"u-textWeight-600;\">
 			Del ".IWP_FormatDataItaliano($Articolo->post_date)."<br />
-		<i class=\"fas fa-user-edit\"></i> ".get_the_author_meta('display_name', $Articolo->post_author)."</p>
+		<span class=\"fas fa-user-edit\"></span> ".get_the_author_meta('display_name', $Articolo->post_author)."</p>
 		</li>";
 	}
 	if($linkLT){?>
@@ -1496,14 +1524,14 @@ if ( post_type_exists( 'circolari' ) ) {
 			<div class="Grid-cell u-sizeFull u-md-size1of2 u-lg-size1of2">
 				<div class="u-borderShadow-m u-borderRadius-l <?php echo $bgkcolorblocchi;?>">
 					<h2 class="<?php echo $colortitblocchi." ".$bgkcolortitblocchi;?> u-padding-r-all"><?php echo $TitoloSB;?></h2>	    	 		
-		<ul id="ListaArticoli" class="Linklist Linklist--padded u-text-r-xs">
+		<ul id="ListaArticoliDx" class="Linklist Linklist--padded u-text-r-xs">
 <?php
 	foreach($ArticoliSB as $Articolo){
 		//var_dump($Articolo);
 		echo "<li><a href=\"".get_permalink($Articolo->ID)."\">".$Articolo->post_title."</a>
 			<p class=\"u-textWeight-600;\">
 			Del ".IWP_FormatDataItaliano($Articolo->post_date)."<br />
-		<i class=\"fas fa-user-edit\"></i> ".get_the_author_meta('display_name', $Articolo->post_author)."</p>
+		<span class=\"fas fa-user-edit\"></span> ".get_the_author_meta('display_name', $Articolo->post_author)."</p>
 		</li>";
 	}
 	if($linkLT){?>

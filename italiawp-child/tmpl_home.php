@@ -17,7 +17,7 @@ get_template_part('template-parts/section-hero');
 if ( has_post_thumbnail() ) {
 	$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
 ?>	<div class="map-full-content">
-		<img src="<?php echo $large_image_url[0];?>" style="width: 100%;"/>
+		<img src="<?php echo $large_image_url[0];?>" style="width: 100%;" alt="Immagine in evidenza della Home Page"/>
 	</div><?php
 }
 	if(get_theme_mod('active_slide_inevidenza') or get_theme_mod('active_blocco_scuola')){

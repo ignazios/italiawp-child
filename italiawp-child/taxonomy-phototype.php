@@ -37,10 +37,10 @@ get_header();
                 		<div class="u-border-top-xxs u-padding-right-xxl u-padding-r-all">
                     		<p class="u-padding-r-bottom ">
  		<?php  if($categorylist!=""){?>
-                       <i class="fa fa-folder-open u-padding-r-right "></i> <?php echo $categorylist;?>
+                       <span class="fa fa-folder-open u-padding-r-right "></span> <?php echo $categorylist;?>
 							<br />
  <?php				}?>
-                        <i class="far fa-calendar-alt u-padding-r-right "></i> <?php the_time( get_option( 'date_format' ) ); ?>
+                        <span class="far fa-calendar-alt u-padding-r-right "></span> <?php the_time( get_option( 'date_format' ) ); ?>
                     </p>
                     <div class="Grid Grid--withGutter u-padding-all-l">
                     	<div class="Grid-cell u-size6of12 u-lg-size1of4">

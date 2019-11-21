@@ -60,12 +60,12 @@ function circolariG_Lista_Circolari($Anno,$Mese,$Destinatario){
 				$numero=get_post_meta($post->ID, "_numero",TRUE);
 				$anno=get_post_meta($post->ID, "_anno",TRUE);
 				$NumeroAtto="Numero ".$numero."_".$anno;
-				$Destinatari='<i class="fa fa-users"></i> '.$Elenco;
+				$Destinatari='<span class="fa fa-users"></span> '.$Elenco;
 			}else{
 				$Destinatari="";
 			}
 			if (post_password_required( $post->ID )){
-			 	$Protetta=' <i class="fas fa-lock"></i> Contenuto Protetto';	
+			 	$Protetta=' <span class="fas fa-lock"></span> Contenuto Protetto';	
 			}else{
 				$riassunto=	$post->post_excerpt;
 			}		
@@ -77,13 +77,13 @@ function circolariG_Lista_Circolari($Anno,$Mese,$Destinatario){
 	            </h3>
 				<div class="u-textWeight-600">Del <?php echo gcg_FormatDataItaliano($post->post_date);?>  <?php echo $NumeroAtto;?></div> 
 				<div class="u-textWeight-600">
-					<i class="fa fa-folder-open"></i> <?php echo $post->post_type." ". $Destinatari." ".$Protetta;?>
+					<span class="fa fa-folder-open"></span> <?php echo $post->post_type." ". $Destinatari." ".$Protetta;?>
 	<?php	
 			if (($post->post_type=="circolari") && gcg_Is_Circolare_Da_Firmare($post->ID)){
 				if (!gcg_Is_Circolare_Firmata($post->ID)) {
 					$ngiorni=gcg_GetscadenzaCircolare($post->ID,"",True);		
 					if(gcg_Is_Circolare_Scaduta($post->ID)){
-						echo '<span style="color:red;"><i class="fa fa-user-edit"></i> Scaduta e non Firmata</span>';
+						echo '<span style="color:red;"><span class="fa fa-user-edit"></span> Scaduta e non Firmata</span>';
 					}else{
 						switch ($ngiorni){
 							case -1:							
@@ -106,7 +106,7 @@ function circolariG_Lista_Circolari($Anno,$Mese,$Destinatario){
 	                    		echo "Esprimere scelta $entro";
 					}
 				}else{
-					echo "<span style=\"color:blue;\"><i class=\"fa fa-user-edit\"></i> Firmata</span>";
+					echo "<span style=\"color:blue;\"><span class=\"fa fa-user-edit\"></span> Firmata</span>";
 				}
 			} ?>
 				</div>

@@ -87,7 +87,7 @@ function VisualizzaAtto($id){
 ?>
 <section  id="DatiAtto">
 	<div class="container clearfix">
-		<button class="Button Button--info Button--shadow u-text-r-xs u-margin-bottom-m" onclick="window.location.href='<?php echo $_SERVER['HTTP_REFERER'];?>'"><i class="fas fa-arrow-circle-left"></i> Torna alla Lista</button>
+		<button class="Button Button--info Button--shadow u-text-r-xs u-margin-bottom-m" onclick="window.location.href='<?php echo $_SERVER['HTTP_REFERER'];?>'"><span class="fas fa-arrow-circle-left"></span> Torna alla Lista</button>
 		<h2>Dati atto</h2>
 		<?php echo ($Annullato?"<h3>'.$Annullato.'</h3>":"");?>
 		<div class="u-layout-wide u-layoutCenter u-layout-withGutter u-background-white">
@@ -337,11 +337,11 @@ if ($TotAtti>$N_A_pp){
      	if (isset($_REQUEST['Pag']) And $_REQUEST['Pag']>1 ){
  			$Pagcur=$_REQUEST['Pag'];
 			$PagPre=$Pagcur-1; 
-				$Nav.= '<li class="Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock"><a href="'.$Para.'1" title="Vai alla prima pagina" class="u-color-50 u-textClean u-block u-md-inlineBlock u-lg-inlineBlock"><i class="fas fa-angle-double-left"></i></a></li>
-					  <li class="Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock"><a href="'.$Para.$PagPre.'" title="Vai alla pagina precedente" class="u-color-50 u-textClean u-block u-md-inlineBlock u-lg-inlineBlock"><i class="fas fa-angle-left"></i></a></li> ';
+				$Nav.= '<li class="Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock"><a href="'.$Para.'1" title="Vai alla prima pagina" class="u-color-50 u-textClean u-block u-md-inlineBlock u-lg-inlineBlock"><span class="fas fa-angle-double-left"></span></a></li>
+					  <li class="Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock"><a href="'.$Para.$PagPre.'" title="Vai alla pagina precedente" class="u-color-50 u-textClean u-block u-md-inlineBlock u-lg-inlineBlock"><span class="fas fa-angle-left"></span></a></li> ';
 		}else{
-				$Nav.= '<li class="Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock"><i class="fas fa-angle-double-left u-color-grey-40  u-block u-md-inlineBlock u-lg-inlineBlock"></i></li>
-					  <li class="Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock"><i class="fas fa-angle-left u-color-grey-40  u-block u-md-inlineBlock u-lg-inlineBlock"></i></a></li> ';			
+				$Nav.= '<li class="Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock"><span class="fas fa-angle-double-left u-color-grey-40  u-block u-md-inlineBlock u-lg-inlineBlock"></span></li>
+					  <li class="Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock"><span class="fas fa-angle-left u-color-grey-40  u-block u-md-inlineBlock u-lg-inlineBlock"></span></a></li> ';			
 			$Pagcur=1;
 		}
 		switch($Npag){
@@ -380,14 +380,14 @@ if ($TotAtti>$N_A_pp){
    			$PagSuc=($Pagcur==$Npag?$Npag:$Pagcur+1);
  			$Nav.= '<li class="Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock">';
  			if (isset($_REQUEST['Pag']) And $_REQUEST['Pag']<$Npag)
- 				$Nav.= '<a href="'.$Para.$PagSuc.'" title="Vai alla pagina successiva"><i class="fas fa-angle-right u-color-50 u-textClean u-block u-md-inlineBlock u-lg-inlineBlock"></i></a></li>';
+ 				$Nav.= '<a href="'.$Para.$PagSuc.'" title="Vai alla pagina successiva"><span class="fas fa-angle-right u-color-50 u-textClean u-block u-md-inlineBlock u-lg-inlineBlock"></span></a></li>';
  			else
- 				$Nav.= '<i class="fas fa-angle-right u-color-grey-40 u-block u-md-inlineBlock u-lg-inlineBlock"></i></li>';
+ 				$Nav.= '<span class="fas fa-angle-right u-color-grey-40 u-block u-md-inlineBlock u-lg-inlineBlock"></span></li>';
 			$Nav.= '<li class="Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock">';
 			if (isset($_REQUEST['Pag']) And $_REQUEST['Pag']<$Npag) 
-				$Nav.= '<a href="'.$Para.$Npag.'" title="Vai all\'ultima pagina"><i class="fas fa-angle-double-right u-color-50 u-textClean u-block u-md-inlineBlock u-lg-inlineBlock"></i></a></li>';
+				$Nav.= '<a href="'.$Para.$Npag.'" title="Vai all\'ultima pagina"><span class="fas fa-angle-double-right u-color-50 u-textClean u-block u-md-inlineBlock u-lg-inlineBlock"></span></a></li>';
 			else
-				$Nav.= '<i class="fas fa-angle-double-right u-color-grey-40  u-block u-md-inlineBlock u-lg-inlineBlock"></i></li>';
+				$Nav.= '<span class="fas fa-angle-double-right u-color-grey-40  u-block u-md-inlineBlock u-lg-inlineBlock"></span></li>';
 		}
 		$Nav.= '</ul>
 		</nav>';

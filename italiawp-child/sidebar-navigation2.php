@@ -1,7 +1,7 @@
 	 	<div class="u-nbfc u-color-grey-30 u-xs-padding-all-none u-borderShadow-m u-xs-borderShadow-none u-borderRadius-m u-background-white BloccoSubNavPage">
 	    	<div class="u-padding-r-all">
 	        	<div  style="min-height: 100px;">
-	            	<h3 class="u-textWeight-400 u-text-r-xs u-color-grey-80 u-margin-r-bottom"><i class="far fa-newspaper"></i> Navigazione pagine</h3>
+	            	<h3 class="u-textWeight-400 u-text-r-xs u-color-grey-80 u-margin-r-bottom"><span class="far fa-newspaper"></span> Navigazione pagine</h3>
 	 				<div class="Accordion Accordion--default fr-accordion js-fr-accordion" id="accordion-page">
 <?php
 	$CurIDPage=$post->ID;
@@ -18,7 +18,7 @@
     if ( $parent->have_posts() ) :
 		$slug=get_post_field( 'post_name', get_post($post->ID) );?>
 						<h4 class="MenuHeader Accordion-header js-fr-accordion__header fr-accordion__header" id="accordion-header-<?php echo $slug;?>">
-							<span class="Accordion-link"><i class="fas fa-ellipsis-v"></i> <?php echo get_the_title();?></span>
+							<span class="Accordion-link"><span class="fas fa-ellipsis-v"></span> <?php echo get_the_title();?></span>
 						</h4>
 						<div id="accordion-panel-<?php echo $slug;?>" class="Accordion-panel fr-accordion__panel js-fr-accordion__panel">
 							<ul class="Linklist u-text-r-xxs">
@@ -43,7 +43,7 @@
         if ( $parent->have_posts() ) :
         	$PaginaPadre=get_post_field( 'post_name', get_post($ParentIDPage) );?>
         				<h4 class="MenuHeader Accordion-header js-fr-accordion__header fr-accordion__header" id="accordion-header-<?php echo $PaginaPadre;?>">
-							<span class="Accordion-link"><i class="fas fa-ellipsis-h"></i> <?php echo get_the_title($ParentIDPage);?></span>
+							<span class="Accordion-link"><span class="fas fa-ellipsis-h"></span> <?php echo get_the_title($ParentIDPage);?></span>
 						</h4>
 						<div id="accordion-panel-<?php echo $PaginaPadre;?>" class="Accordion-panel fr-accordion__panel js-fr-accordion__panel">
 							<ul class="Linklist u-text-r-xxs">						

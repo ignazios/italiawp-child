@@ -35,19 +35,19 @@ get_header();?>
                  <div class="Grid-cell u-md-size3of12 u-lg-size3of12" id="subnav">
 				 <div class="u-nbfc u-background-50 u-color-white u-borderShadow-m u-xs-borderShadow-none u-borderRadius-m u-text-r-xxs u-padding-r-all" id="BloccoMetaArticolo">
                 	<p class="u-textWeight-400 u-text-r-xxs u-margin-r-bottom">
-                		<i class="fas fa-user-edit u-padding-r-right"></i> <?php the_author_posts_link() ?>
+                		<span class="fas fa-user-edit u-padding-r-right"></span> <?php the_author_posts_link() ?>
                 	</p>
                		<p class="u-textWeight-400 u-text-r-xxs u-margin-r-bottom">
-                		<i class="far fa-calendar-alt u-padding-r-right"></i> <?php the_time( get_option( 'date_format' ) ); ?>
+                		<span class="far fa-calendar-alt u-padding-r-right"></span> <?php the_time( get_option( 'date_format' ) ); ?>
                 	</p>
                		<?php if(get_the_category_list()) :?>
               		<p class="u-textWeight-400 u-text-r-xxs u-margin-r-bottom">
-                		<i class="fa fa-folder-open u-padding-r-right"></i> <?php the_category(', '); ?>
+                		<span class="fa fa-folder-open u-padding-r-right"></span> <?php the_category(', '); ?>
                 	</p>
  					<?php endif;
  						  if(get_the_tag_list()) :?>
               		<p class="u-textWeight-400 u-text-r-xxs u-margin-r-bottom">
-                		<i class="fas fa-hashtag u-padding-r-right"></i> <?php the_tags( '', ', '); ?>
+                		<span class="fas fa-hashtag u-padding-r-right"></span> <?php the_tags( '', ', '); ?>
                 	</p>  					
 					<?php endif;?>
 				</div>
