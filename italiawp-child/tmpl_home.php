@@ -12,7 +12,7 @@
 * @package italiawp-child
 */
 
-get_header(); 
+get_header();
 get_template_part('template-parts/section-hero');
 if ( has_post_thumbnail() ) {
 	$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');

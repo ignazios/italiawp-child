@@ -9,8 +9,68 @@
 
 if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) { die('You are not allowed to call this page directly.'); }
 
-
 include_once(dirname (__FILE__) .'/frontend_filtro.php');
+
+ob_start();
+
+if(isset($_REQUEST['id']) And !is_numeric($_REQUEST['id'])){
+	$_REQUEST['id']=0;
+	echo "<br /><span style='color:red;'>ATTENZIONE:</span> E' stato indicato un VALORE non valido per il parametro <span style='color:red;'>ID</span>";
+	return;
+}
+if(isset($_REQUEST['action']) And $_REQUEST['action']!=wp_strip_all_tags($_REQUEST['action'])){
+	unset($_REQUEST['action']);
+	echo "<br /><span style='color:red;'>ATTENZIONE:</span> E' stato indicato un VALORE non valido per il parametro <span style='color:red;'>Action</span>";
+	return;
+}
+if(isset($_REQUEST['categoria']) And !is_numeric($_REQUEST['categoria'])){
+	$_REQUEST['categoria']=0;
+	echo "<br /><span style='color:red;'>ATTENZIONE:</span> E' stato indicato un VALORE non valido per il parametro <span style='color:red;'>Categoria</span>";
+}
+if(isset($_REQUEST['numero']) And $_REQUEST['numero']!="" AND !is_numeric($_REQUEST['numero'])){
+	$_REQUEST['numero']="";
+	echo "<br /><span style='color:red;'>ATTENZIONE:</span> E' stato indicato un VALORE non valido per il parametro <span style='color:red;'>Numero</span>";
+}
+if(isset($_REQUEST['anno']) And !is_numeric($_REQUEST['anno'])){
+	$_REQUEST['anno']=0;
+	echo "<br /><span style='color:red;'>ATTENZIONE:</span> E' stato indicato un VALORE non valido per il parametro <span style='color:red;'>Anno</span>";
+}
+if(isset($_REQUEST['ente']) And !is_numeric($_REQUEST['ente'])){
+	$_REQUEST['ente']="-1";
+	echo "<br /><span style='color:red;'>ATTENZIONE:</span> E' stato indicato un VALORE non valido per il parametro <span style='color:red;'>Ente</span>";
+}
+if(isset($_REQUEST['Pag']) And !is_numeric($_REQUEST['Pag'])){
+	$_REQUEST['Pag']=1;
+	echo "<br /><span style='color:red;'>ATTENZIONE:</span> E' stato indicato un VALORE non valido per il parametro <span style='color:red;'>Pag</span>";
+}
+if(isset($_REQUEST['oggetto']) And $_REQUEST['oggetto']!=wp_strip_all_tags($_REQUEST['oggetto'])){
+	$_REQUEST['oggetto']="";
+	echo "<br /><span style='color:red;'>ATTENZIONE:</span> E' stato indicato un VALORE non valido per il parametro <span style='color:red;'>Oggetto</span>";
+}
+if(isset($_REQUEST['riferimento']) And $_REQUEST['riferimento']!=wp_strip_all_tags($_REQUEST['riferimento'])){
+	$_REQUEST['riferimento']="";
+	echo "<br /><span style='color:red;'>ATTENZIONE:</span> E' stato indicato un VALORE non valido per il parametro <span style='color:red;'>Riferimento</span>";
+}
+if(isset($_REQUEST['DataInizio']) And $_REQUEST['DataInizio']!=wp_strip_all_tags($_REQUEST['DataInizio'])){
+	$_REQUEST['DataInizio']="";
+	echo "<br /><span style='color:red;'>ATTENZIONE:</span> E' stato indicato un VALORE non valido per il parametro <span style='color:red;'>Da Data</span>";
+}
+if(isset($_REQUEST['DataFine']) And $_REQUEST['DataFine']!=wp_strip_all_tags($_REQUEST['DataFine'])){
+	$_REQUEST['DataFine']="";
+	echo "<br /><span style='color:red;'>ATTENZIONE:</span> E' stato indicato un VALORE non valido per il parametro <span style='color:red;'>A Data</span>";
+}
+if(isset($_REQUEST['filtra']) And $_REQUEST['filtra']!="Filtra"){
+	$_REQUEST['filtra']="Filtra";
+	echo "<br /><span style='color:red;'>ATTENZIONE:</span> E' stato indicato un VALORE non valido per il parametro <span style='color:red;'>filtra</span>";
+}
+if(isset($_REQUEST['vf']) And ($_REQUEST['vf']!="s" OR $_REQUEST['vf']!="undefined")){
+	$_REQUEST['vf']="undefined";
+	echo "<br /><span style='color:red;'>ATTENZIONE:</span> E' stato indicato un VALORE non valido per il parametro <span style='color:red;'>vf</span>";
+}
+foreach($_REQUEST as $Key => $Val){
+	$_REQUEST[$Key]=htmlspecialchars(wp_strip_all_tags($_REQUEST[$Key]));
+}
+
 if(isset($_REQUEST['action'])){
 	switch ($_REQUEST['action']){
         case 'printatto':
@@ -218,7 +278,6 @@ foreach ($allegati as $allegato) {
 }
 
 function Lista_Atti($Parametri,$Categoria=0,$Numero=0,$Anno=0,$Oggetto='',$Dadata=0,$Adata=0,$Riferimento='',$Ente=-1){
-	ob_start();
 	switch ($Parametri['stato']){
 			case 0:
 				$TitoloAtti="Tutti gli Atti";
@@ -361,7 +420,7 @@ if ($TotAtti>$N_A_pp){
 					}else{
 						$Inf=$Pagcur-1;
 						$Sup=$Pagcur+1;
-					}			
+					}		
 				}else{
 						$Inf=$Npag-2;
 						$Sup=$Npag;			
