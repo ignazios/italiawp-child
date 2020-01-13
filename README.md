@@ -14,6 +14,8 @@ facebook: https://www.facebook.com/wpscuola/
 ## Siti di riferimento
 demo del tema: https://scuola.eduva.org
 ## Change log
+- **1.0.0**
+  - ***Corretti*** bug di sicurezza plugin albo on line
 - **0.0.8**
   - ***Corretti*** alcuni bug minori
   - ***Corretti*** elementi relativi all'accessibilità

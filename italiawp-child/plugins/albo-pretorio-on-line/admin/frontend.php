@@ -377,14 +377,15 @@ if ($TotAtti>$N_A_pp){
 			}
 		}
    		if ($Npag>0 ){
+   			$CurPage=(isset($_REQUEST['Pag'])?$_REQUEST['Pag']:1);
    			$PagSuc=($Pagcur==$Npag?$Npag:$Pagcur+1);
  			$Nav.= '<li class="Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock">';
- 			if (isset($_REQUEST['Pag']) And $_REQUEST['Pag']<$Npag)
+ 			if ($CurPage<$Npag)
  				$Nav.= '<a href="'.$Para.$PagSuc.'" title="Vai alla pagina successiva"><span class="fas fa-angle-right u-color-50 u-textClean u-block u-md-inlineBlock u-lg-inlineBlock"></span></a></li>';
  			else
  				$Nav.= '<span class="fas fa-angle-right u-color-grey-40 u-block u-md-inlineBlock u-lg-inlineBlock"></span></li>';
 			$Nav.= '<li class="Grid-cell u-textCenter u-md-inlineBlock u-lg-inlineBlock">';
-			if (isset($_REQUEST['Pag']) And $_REQUEST['Pag']<$Npag) 
+			if ($CurPage<$Npag) 
 				$Nav.= '<a href="'.$Para.$Npag.'" title="Vai all\'ultima pagina"><span class="fas fa-angle-double-right u-color-50 u-textClean u-block u-md-inlineBlock u-lg-inlineBlock"></span></a></li>';
 			else
 				$Nav.= '<span class="fas fa-angle-double-right u-color-grey-40  u-block u-md-inlineBlock u-lg-inlineBlock"></span></li>';
