@@ -9,6 +9,8 @@
 	 if(!$Testo_SinUp)
 	 	$Testo_SinUp="Docenti";
 	 $Logo_SinUp=get_theme_mod('Scuola_Logo_SinUp');
+	 if(!($alt_Logo_SinUp = get_post_meta($Logo_SinUp, '_wp_attachment_image_alt', true)))
+	 		$alt_Logo_SinUp="Logo";
 	 $Link_SinUp=get_theme_mod('Scuola_categoria_SinUp');
 	 if(!$Link_SinUp)
 	 	$Link_SinUp="#";
@@ -18,6 +20,8 @@
 	 if(!$Testo_DesUp)
 	 	$Testo_DesUp="Personale ATA";
 	 $Logo_DesUp=get_theme_mod('Scuola_Logo_DesUp');
+	 if(!($alt_Logo_DesUp = get_post_meta($Logo_DesUp, '_wp_attachment_image_alt', true)))
+	 		$alt_Logo_DesUp="Logo";
 	 $Link_DesUp=get_theme_mod('Scuola_categoria_DesUp');
 	 if(!$Link_DesUp)
 	 	$Link_DesUp="#"; 	
@@ -27,6 +31,8 @@
 	 if(!$Testo_SinDw)
 	 	$Testo_SinDw="Studenti";
 	 $Logo_SinDw=get_theme_mod('Scuola_Logo_SinDw');
+	 if(!($alt_Logo_SinDw = get_post_meta($Logo_SinDw, '_wp_attachment_image_alt', true)))
+	 		$alt_Logo_SinDw="Logo";
 	 $Link_SinDw=get_theme_mod('Scuola_categoria_SinDw');
 	 if(!$Link_SinDw)
 	 	$Link_SinDw="#"; 	
@@ -36,6 +42,8 @@
 	 if(!$Testo_DesDw)
 	 	$Testo_DesDw="Studenti";
 	 $Logo_DesDw=get_theme_mod('Scuola_Logo_DesDw');
+	 if(!($alt_Logo_DesDw = get_post_meta($Logo_DesDw, '_wp_attachment_image_alt', true)))
+	 		$alt_Logo_DesDw="Logo";
 	 $Link_DesDw=get_theme_mod('Scuola_categoria_DesDw');
 	 if(!$Link_DesDw)
 	 	$Link_DesDw="#"; 
@@ -84,7 +92,7 @@
 <?php if($Logo_SinUp) :?>
 						<div class="u-md-size1of1 u-lg-size1of1 u-padding-all-s">
 							<div class="u-nbfc u-borderShadow-xxs u-borderRadius-m u-background-50">
-						<img src="<?php echo wp_get_attachment_url($Logo_SinUp);?>" alt="" class="soggetti">
+						<img src="<?php echo wp_get_attachment_url($Logo_SinUp);?>" alt="<?php echo $alt_Logo_SinUp;?>" class="soggetti">
 								<div class="u-text-r-xxs u-padding-r-all u-layout-prose">
 									<h3 class="u-text-h4 u-margin-r-bottom">
 										<a class="u-text-r-m u-color-white u-textClean" href="<?php echo $Link_SinUp;?>" tabindex="-1" data-owl-temp-tabindex="0"><?php echo $Testo_SinUp;?></a>
@@ -96,7 +104,7 @@
       if($Logo_SinDw) :?>
 						<div class="u-md-size1of1 u-lg-size1of1 u-padding-all-s">
 							<div class="u-nbfc u-borderShadow-xxs u-borderRadius-m u-background-50">
-							<img src="<?php echo wp_get_attachment_url($Logo_SinDw);?>" alt="" class="soggetti">
+							<img src="<?php echo wp_get_attachment_url($Logo_SinDw);?>" alt="<?php echo $alt_Logo_SinDw;?>" class="soggetti">
 								<div class="u-text-r-xxs u-padding-r-all u-layout-prose">
 									<h3 class="u-text-h4 u-margin-r-bottom">
 										<a class="u-text-r-m u-color-white u-textClean" href="<?php echo $Link_SinDw;?>" tabindex="-1" data-owl-temp-tabindex="0"><?php echo $Testo_SinDw;?></a>
@@ -110,7 +118,7 @@
 <?php if($Logo_DesUp) :?>
 						<div class="u-md-size1of1 u-lg-size1of1 u-padding-all-s">
 							<div class="u-nbfc u-borderShadow-xxs u-borderRadius-m u-background-50">
-							<img src="<?php echo wp_get_attachment_url($Logo_DesUp);?>" alt="" class="soggetti">
+							<img src="<?php echo wp_get_attachment_url($Logo_DesUp);?>" alt="<?php echo $alt_Logo_DesUp;?>" class="soggetti">
 								<div class="u-text-r-xxs u-padding-r-all u-layout-prose">
 									<h3 class="u-text-h4 u-margin-r-bottom">
 										<a class="u-text-r-m u-color-white u-textClean" href="<?php echo $Link_DesUp;?>" tabindex="-1" data-owl-temp-tabindex="0"><?php echo $Testo_DesUp;?></a>
@@ -122,7 +130,7 @@
       if($Logo_DesDw) :?>
 						<div class="u-md-size1of1 u-lg-size1of1 u-padding-all-s">
 							<div class="u-nbfc u-borderShadow-xxs u-borderRadius-m u-background-50">
-							<img src="<?php echo wp_get_attachment_url($Logo_DesDw);?>" alt="" class="soggetti">
+							<img src="<?php echo wp_get_attachment_url($Logo_DesDw);?>" alt="<?php echo $alt_Logo_DesDw;?>" class="soggetti">
 								<div class="u-text-r-xxs u-padding-r-all u-layout-prose">
 									<h3 class="u-text-h4 u-margin-r-bottom">
 										<a class="u-text-r-m u-color-white u-textClean" href="<?php echo $Link_DesDw;?>" tabindex="-1" data-owl-temp-tabindex="0"><?php echo $Testo_DesDw;?></a>
