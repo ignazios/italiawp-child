@@ -51,8 +51,10 @@ endif;?>
                          <address>
                             <?php echo get_theme_mod('dettagli-contatti-indirizzo'); ?><br>
                             <?php echo get_theme_mod('dettagli-contatti-cap'); ?>, <?php echo get_theme_mod('dettagli-contatti-citta'); ?><br><br>
-                            C.F.<br><?php echo get_theme_mod('dettagli-contatti-cfpa'); ?>
-                            <?php echo (get_theme_mod('dettagli-contatti-pipa')!=""?"<br><br>P.Iva<br>".get_theme_mod('dettagli-contatti-pipa'):""); ?>
+                            C.M. <?php echo get_theme_mod('dettagli-contatti-CM'); ?><br>
+                            C.F. <?php echo get_theme_mod('dettagli-contatti-cfpa'); ?><br>
+                            <?php echo (get_theme_mod('dettagli-contatti-pipa')!=""?"P.Iva ".get_theme_mod('dettagli-contatti-pipa'):""); ?><br>
+                            Cod. Univoco <?php echo get_theme_mod('dettagli-contatti-coduni'); ?>
                         </address>
                     </div>
                 </div>
@@ -61,8 +63,14 @@ endif;?>
                     <h2 class="Footer-blockTitle">Recapiti</h2>
                     <div class="Footer-subBlock">
                          <address>
-                            Telefono<br><a href="tel:+39<?php echo get_theme_mod('dettagli-contatti-telefono'); ?>" > <?php echo get_theme_mod('dettagli-contatti-telefono'); ?></a><br><br>
-                            Fax<br><a href="tel:+39<?php echo get_theme_mod('dettagli-contatti-fax'); ?>" > <?php echo get_theme_mod('dettagli-contatti-fax'); ?></a><br><br>
+                         	<?php echo (get_theme_mod('dettagli-contatti-des-telefono')!=""?get_theme_mod('dettagli-contatti-des-telefono')."<br>":"Telefono <br>");?>
+                            <a href="tel:+39<?php echo get_theme_mod('dettagli-contatti-telefono'); ?>" > <?php echo get_theme_mod('dettagli-contatti-telefono'); ?><br></a>
+							<?php echo ((get_theme_mod('dettagli-contatti-des-telefono2')!="" And get_theme_mod('dettagli-contatti-telefono2')!="")?get_theme_mod('dettagli-contatti-des-telefono2')."<br>":"Telefono <br>");?>
+                            <a href="tel:+39<?php echo get_theme_mod('dettagli-contatti-telefono2'); ?>" > <?php echo get_theme_mod('dettagli-contatti-telefono2'); ?><br></a>                            
+							<?php echo ((get_theme_mod('dettagli-contatti-des-telefono3')!="" And get_theme_mod('dettagli-contatti-telefono3')!="")?get_theme_mod('dettagli-contatti-des-telefono3')."<br>":"Telefono <br>");?>
+                            <a href="tel:+39<?php echo get_theme_mod('dettagli-contatti-telefono3'); ?>" > <?php echo get_theme_mod('dettagli-contatti-telefono3'); ?><br></a>                
+ 							<?php echo ((get_theme_mod('dettagli-contatti-des-telefono4')!="" And get_theme_mod('dettagli-contatti-telefono4')!="")?get_theme_mod('dettagli-contatti-des-telefono4')."<br>":"Telefono <br>");?>
+                            <a href="tel:+39<?php echo get_theme_mod('dettagli-contatti-telefono4'); ?>" > <?php echo get_theme_mod('dettagli-contatti-telefono4'); ?><br></a>                
                         </address>
                     </div>
                 </div>

@@ -71,7 +71,7 @@ if (count($pages)!=0)
 			'settings' => 'dettagli-contatti',
 			'priority'	=> 8) 
 	));
-// Campo URL Indirizzo
+// Campo Indirizzo
     $wp_customize->add_setting( 'dettagli-contatti-indirizzo' , array(
 		'capability' => 'edit_theme_options') );
 	$wp_customize->add_control( 'dettagli-contatti-indirizzo', array(
@@ -80,7 +80,7 @@ if (count($pages)!=0)
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-contatti-indirizzo',
         'priority'	=> 9));	
-// Campo URL CAP
+// Campo CAP
     $wp_customize->add_setting( 'dettagli-contatti-cap' , array(
 		'capability' => 'edit_theme_options') );
 	$wp_customize->add_control( 'dettagli-contatti-cap', array(
@@ -89,7 +89,7 @@ if (count($pages)!=0)
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-contatti-cap',
         'priority'	=> 10));	
-// Campo URL Città
+// Campo Città
     $wp_customize->add_setting( 'dettagli-contatti-citta' , array(
 		'capability' => 'edit_theme_options') );
 	$wp_customize->add_control( 'dettagli-contatti-citta', array(
@@ -98,7 +98,16 @@ if (count($pages)!=0)
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-contatti-citta',
         'priority'	=> 11));
-// Campo URL Telefono
+// Campo Des Telefono
+    $wp_customize->add_setting( 'dettagli-contatti-des-telefono' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-des-telefono', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Descrizione Telefono:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-des-telefono',
+        'priority'	=> 12));        
+// Campo Telefono
     $wp_customize->add_setting( 'dettagli-contatti-telefono' , array(
 		'capability' => 'edit_theme_options') );
 	$wp_customize->add_control( 'dettagli-contatti-telefono', array(
@@ -106,17 +115,62 @@ if (count($pages)!=0)
         'label' 	=> 'Telefono:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-contatti-telefono',
-        'priority'	=> 12));        
-// Campo URL Fax
-    $wp_customize->add_setting( 'dettagli-contatti-fax' , array(
+        'priority'	=> 13));        
+// Campo Des Telefono2
+    $wp_customize->add_setting( 'dettagli-contatti-des-telefono2' , array(
 		'capability' => 'edit_theme_options') );
-	$wp_customize->add_control( 'dettagli-contatti-fax', array(
+	$wp_customize->add_control( 'dettagli-contatti-des-telefono2', array(
         'type' 		=> 'text',
-        'label' 	=> 'Fax:',
+        'label' 	=> 'Descrizione Secondo Telefono:',
         'section' 	=> 'site_ente',
-        'settings' => 'dettagli-contatti-fax',
-        'priority'	=> 13));
-// Campo URL Email
+        'settings' => 'dettagli-contatti-des-telefono2',
+        'priority'	=> 14));        
+// Campo Telefono2
+    $wp_customize->add_setting( 'dettagli-contatti-telefono2' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-telefono2', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Secondo Telefono:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-telefono2',
+        'priority'	=> 15));        
+// Campo Des Telefono3
+    $wp_customize->add_setting( 'dettagli-contatti-des-telefono3' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-des-telefono3', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Descrizione Terzo Telefono:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-des-telefono3',
+        'priority'	=> 16));        
+// Campo Telefono3
+    $wp_customize->add_setting( 'dettagli-contatti-telefono3' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-telefono3', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Terzo Telefono:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-telefono3',
+        'priority'	=> 17));        
+// Campo Des Telefono4
+    $wp_customize->add_setting( 'dettagli-contatti-des-telefono4' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-des-telefono4', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Descrizione Quarto Telefono:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-des-telefono4',
+        'priority'	=> 18));        
+// Campo Telefono4
+    $wp_customize->add_setting( 'dettagli-contatti-telefono4' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-telefono4', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Quarto Telefono:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-telefono4',
+        'priority'	=> 19));
+// Campo Email
     $wp_customize->add_setting( 'dettagli-contatti-email' , array(
 		'capability' => 'edit_theme_options') );
 	$wp_customize->add_control( 'dettagli-contatti-email', array(
@@ -124,8 +178,8 @@ if (count($pages)!=0)
         'label' 	=> 'Email:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-contatti-email',
-        'priority'	=> 14));
-// Campo URL Seconda Email
+        'priority'	=> 20));
+// Campo Seconda Email
     $wp_customize->add_setting( 'dettagli-contatti-email2' , array(
 		'capability' => 'edit_theme_options') );
 	$wp_customize->add_control( 'dettagli-contatti-email2', array(
@@ -133,8 +187,8 @@ if (count($pages)!=0)
         'label' 	=> 'Seconda Email:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-contatti-email2',
-        'priority'	=> 15));
-// Campo URL PEC
+        'priority'	=> 21));
+// Campo PEC
     $wp_customize->add_setting( 'dettagli-contatti-pec' , array(
 		'capability' => 'edit_theme_options') );
 	$wp_customize->add_control( 'dettagli-contatti-pec', array(
@@ -142,8 +196,8 @@ if (count($pages)!=0)
         'label' 	=> 'PEC:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-contatti-pec',
-        'priority'	=> 16));
-// Campo URL C.F.
+        'priority'	=> 22));
+// Campo C.F.
     $wp_customize->add_setting( 'dettagli-contatti-cfpa' , array(
 		'capability' => 'edit_theme_options') );
 	$wp_customize->add_control( 'dettagli-contatti-cfpa', array(
@@ -151,8 +205,8 @@ if (count($pages)!=0)
         'label' 	=> 'Codice Fiscale:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-contatti-cfpa',
-        'priority'	=> 17));
-// Campo URL Partita IVA
+        'priority'	=> 23));
+// Campo Partita IVA
     $wp_customize->add_setting( 'dettagli-contatti-pipa' , array(
 		'capability' => 'edit_theme_options') );
 	$wp_customize->add_control( 'dettagli-contatti-pipa', array(
@@ -160,8 +214,17 @@ if (count($pages)!=0)
         'label' 	=> 'Partita IVA:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-contatti-pipa',
-        'priority'	=> 18));
-// Campo URL Cod. Univoco
+        'priority'	=> 24));
+// Campo Codice Meccanografico
+    $wp_customize->add_setting( 'dettagli-contatti-CM' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-CM', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Cod. Meccanografico:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-CM',
+        'priority'	=> 25));
+// Campo Cod. Univoco
     $wp_customize->add_setting( 'dettagli-contatti-coduni' , array(
 		'capability' => 'edit_theme_options') );
 	$wp_customize->add_control( 'dettagli-contatti-coduni', array(
@@ -169,7 +232,7 @@ if (count($pages)!=0)
         'label' 	=> 'Cod. Univoco:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-contatti-coduni',
-        'priority'	=> 20));
+        'priority'	=> 26));
 // Titolo Social
     $wp_customize->add_setting( 'dettagli-social' , array(
 		'capability' => 'edit_theme_options') );
@@ -177,7 +240,7 @@ if (count($pages)!=0)
 			'label'	=> "Social",
 			'section' => 'site_ente',
 			'settings' => 'dettagli-social',
-			'priority'	=> 21) 
+			'priority'	=> 27) 
 	));
 // Campo Facebook
     $wp_customize->add_setting( 'dettagli-social-facebook' , array(
@@ -187,7 +250,7 @@ if (count($pages)!=0)
         'label' 	=> 'Facebook:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-social-facebook',
-        'priority'	=> 22));
+        'priority'	=> 28));
 // Campo Twitter
     $wp_customize->add_setting( 'dettagli-social-twitter' , array(
 		'capability' => 'edit_theme_options') );
@@ -196,7 +259,7 @@ if (count($pages)!=0)
         'label' 	=> 'Twitter:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-social-twitter',
-        'priority'	=> 23));
+        'priority'	=> 29));
 // Campo YouTube
     $wp_customize->add_setting( 'dettagli-social-youtube' , array(
 		'capability' => 'edit_theme_options') );
@@ -205,7 +268,7 @@ if (count($pages)!=0)
         'label' 	=> 'YouTube:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-social-youtube',
-        'priority'	=> 24));
+        'priority'	=> 30));
 // Campo Instagram
     $wp_customize->add_setting( 'dettagli-social-instagram' , array(
 		'capability' => 'edit_theme_options') );
@@ -214,7 +277,7 @@ if (count($pages)!=0)
         'label' 	=> 'Instagram:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-social-instagram',
-        'priority'	=> 25));
+        'priority'	=> 31));
 /**
 *  Rimozione delle sezioni non utilizzate dal child
 * 

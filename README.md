@@ -14,6 +14,9 @@ facebook: https://www.facebook.com/wpscuola/
 ## Siti di riferimento
 demo del tema: https://scuola.eduva.org
 ## Change log
+- **1.0.2**
+  - ***Modificata*** la sezione Footer. Adesso si possono indicare fino a 4 numeri di telefono compresi di desto descrittivo, è stato tolto il Fax, che può essere indicato al posto di uno dei 4 numeri di telefono
+  - ***Modificato*** la sezione Footer, colonna informazioni, viene riportato il CUF. E' stato inserito il CM 
 - **1.0.1**
   - ***Aggiunto*** testo alternativo immagini associate ai blocchi Scuola
 - **1.0.0**
