@@ -14,6 +14,11 @@ facebook: https://www.facebook.com/wpscuola/
 ## Siti di riferimento
 demo del tema: https://scuola.eduva.org
 ## Change log
+- **1.1**
+  - ***Inserito*** nuovo Widget **ItaliaWP Multi Menu** che permette l'inserimento di max 3 menu in blocchi nella Home Page
+  - ***Creato*** lo shortcode **[Galleria id="id_della galleria"]** da utilizzare per visualizzare una galleria fotografia all'interno di un post/pagina/custom_post_type
+  - ***Corretti*** errori del widget **ItaliaWP Feed RSS**
+  - ***Corretti*** vari errori di codice e riorganizzato il codice dei widget
 - **1.0.2**
   - ***Modificata*** la sezione Footer. Adesso si possono indicare fino a 4 numeri di telefono compresi di desto descrittivo, è stato tolto il Fax, che può essere indicato al posto di uno dei 4 numeri di telefono
   - ***Modificato*** la sezione Footer, colonna informazioni, viene riportato il CUF. E' stato inserito il CM 

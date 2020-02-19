@@ -35,11 +35,8 @@
 		'posts_per_page' => -1);
 		
 	}
-	//		echo "<br />".$Sql;exit;
-			$ArchivioDate= new WP_Query($args);
-//			$ArchivioDate = $wpdb->get_results($Sql);
-//print_r($ArchivioDate->posts);wp_die();
-			if(count($ArchivioDate->posts)==0){
+	$ArchivioDate= new WP_Query($args);
+	if(count($ArchivioDate->posts)==0){
 ?>
 				<h4>Archivio Vuoto</h4>
 <?php				
@@ -54,6 +51,8 @@
  					<div class="Accordion Accordion--default fr-accordion js-fr-accordion" id="accordion-page">
 <?php			$Anno=0;
 			foreach ($ArchivioDate->posts as $Data){
+				if(!isset($Data->Anno))
+					continue;
 				if ($Anno!=$Data->Anno){
 					if($Anno!=0){
 ?>

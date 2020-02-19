@@ -6,6 +6,25 @@
  *
  * @package italiawp-child
  */
+/**
+* Risoluzione problema feed RSS modifica libreria parser Date di SimplePie
+*/
+if ( !class_exists( 'SimplePie' ) ) {
+
+	class Registry_FixSimplePieErrors {
+
+	    static public $sFilePath = __FILE__; 
+	    static public $sDirPath  = '';
+	    
+	    static public function setUp() {
+	        self::$sDirPath = dirname( self::$sFilePath );
+	    }
+	}
+
+Registry_FixSimplePieErrors::setUp();
+
+include( dirname( __FILE__ ) . '/include/class-simplepie.php' );
+}
 
  /* UPDATER THEME VERSION */
 require 'inc/theme-update-checker.php';
@@ -180,14 +199,25 @@ function filter_bcn_breadcrumb_url( $url, $this_type, $this_id ) {
     return $url.$Archivio; 
 }; 
 add_filter( 'bcn_breadcrumb_url', 'filter_bcn_breadcrumb_url', 10, 3 ); 
+
 /**
 * Gestione dei Widgets personalizzati per il tema Child
 * 
 * @return
 */
-require (get_template_directory() . '-child/widget/widget.php' ); 
+require (get_template_directory() . '-child/widget/widget-articoli.php' ); 
+require (get_template_directory() . '-child/widget/widget-AT.php' );
+require (get_template_directory() . '-child/widget/widget-blocchi.php' ); 
+require (get_template_directory() . '-child/widget/widget-comunicazioni.php' );
+require (get_template_directory() . '-child/widget/widget-EM-calendario.php' );
+require (get_template_directory() . '-child/widget/widget-gallerialink.php' ); 
+require (get_template_directory() . '-child/widget/widget-multimenu.php' );
+require (get_template_directory() . '-child/widget/widget-trasparenza.php' ); 
+
 add_action( 'widgets_init', 'italiawp_child_Register_Widget' );
+
 function italiawp_child_Register_Widget(){
+	register_widget( 'Multi_Menu' );
 	register_widget( 'my_atWidget' );
 	register_widget( 'Articoli' );
 	register_widget( 'Comunicazioni' );
@@ -237,6 +267,26 @@ if (function_exists("circolariG_Visualizza")){
 		return $ret;
 	} add_shortcode('VisCircolari', 'myVisualizzaCircolariG');
 }
+/**
+*  Shortcode per la visualizzazione di una galleria fotografica
+* @id id della galleria fotografica
+* 
+*/
+add_shortcode('Galleria', 'VisGalleria');
+/**
+* 
+* @param ID Galleria
+* 
+* @return
+*/
+	function VisGalleria($Parametri){
+		$ret="";
+		$Parametri=shortcode_atts(array(
+			'id' => '0',
+		), $Parametri,"Galleria");
+		require_once ( get_stylesheet_directory()."/shortcode/gallerie.php");
+		return $ret;
+	}
 
 function get_ListaCircolari($Output=False,$NumCirc=0,$Anno=0,$Mese=0){
 	$IdCircolari=get_option('Circolari_Categoria');
@@ -275,8 +325,8 @@ function get_ListaCircolari($Output=False,$NumCirc=0,$Anno=0,$Mese=0){
 	}
 	if (!empty($Circolari)){
 		$Ret=array();
-		foreach($Circolari as $Circolare) {
-			$visibilita=get_post_meta($post->ID, "_visibilita",true);
+		foreach ($Circolari as $Circolare) {
+			$visibilita=get_post_meta($Circolare->ID, "_visibilita",true);
 		 	if(!$visibilita)
 		 		$visibilita="p";
 			if ((Is_Circolare_per_User($Circolare->ID) and $visibilita=="d") or $visibilita=="p"){
