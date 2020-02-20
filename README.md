@@ -14,6 +14,8 @@ facebook: https://www.facebook.com/wpscuola/
 ## Siti di riferimento
 demo del tema: https://scuola.eduva.org
 ## Change log
+- **1.1.1**
+  - ***Inserito*** nuovo pulsante nell'editor che permette la generazione dello shortcode che riproduce una galleria fotografica
 - **1.1**
   - ***Inserito*** nuovo Widget **ItaliaWP Multi Menu** che permette l'inserimento di max 3 menu in blocchi nella Home Page
   - ***Creato*** lo shortcode **[Galleria id="id_della galleria"]** da utilizzare per visualizzare una galleria fotografia all'interno di un post/pagina/custom_post_type

@@ -9,6 +9,26 @@
 /**
 * Risoluzione problema feed RSS modifica libreria parser Date di SimplePie
 */
+
+/*TINY MCE Quote Button*/
+add_action('init', 'add_gallery_button');
+
+function add_gallery_button()
+{
+		add_filter('mce_external_plugins','add_ItaWP_galleria');
+		add_filter('mce_buttons', 'register_ItaWP_galleria');
+}  
+function add_ItaWP_galleria($plugin_array)
+{
+	$plugin_array['ItaWPgalleria'] = get_stylesheet_directory_uri().'/js/ButtonEditorGallerie.js';
+	return $plugin_array;
+}
+function register_ItaWP_galleria($buttons)
+{
+	array_push($buttons, "separator", "ItaWPgalleria");
+	return $buttons;
+}
+  
 if ( !class_exists( 'SimplePie' ) ) {
 
 	class Registry_FixSimplePieErrors {

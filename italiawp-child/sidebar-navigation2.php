@@ -20,7 +20,7 @@
 						<h4 class="MenuHeader Accordion-header js-fr-accordion__header fr-accordion__header" id="accordion-header-<?php echo $slug;?>">
 							<span class="Accordion-link"><span class="fas fa-ellipsis-v"></span> <?php echo get_the_title();?></span>
 						</h4>
-						<div id="accordion-panel-<?php echo $slug;?>" class="Accordion-panel fr-accordion__panel js-fr-accordion__panel">
+				<div id="accordion-panel-<?php echo $slug; ?>" style="height: auto;" class="Accordion-panel fr-accordion__panel js-fr-accordion__panel">
 							<ul class="Linklist u-text-r-xxs">
 <?php      	while ( $parent->have_posts() ) : $parent->the_post();
             	echo '<li><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
@@ -42,7 +42,7 @@
 
         if ( $parent->have_posts() ) :
         	$PaginaPadre=get_post_field( 'post_name', get_post($ParentIDPage) );?>
-        				<h4 class="MenuHeader Accordion-header js-fr-accordion__header fr-accordion__header" id="accordion-header-<?php echo $PaginaPadre;?>">
+        				<h4 class="MenuHeader Accordion-header js-fr-accordion__header fr-accordion__header" aria-expanded="true"id="accordion-header-<?php echo $PaginaPadre;?>">
 							<span class="Accordion-link"><span class="fas fa-ellipsis-h"></span> <?php echo get_the_title($ParentIDPage);?></span>
 						</h4>
 						<div id="accordion-panel-<?php echo $PaginaPadre;?>" class="Accordion-panel fr-accordion__panel js-fr-accordion__panel">
