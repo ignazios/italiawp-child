@@ -31,10 +31,10 @@ if ( has_post_thumbnail() ) {
 		    get_template_part( 'template-parts/section', 'scuola' );
 		}
 	   if (get_theme_mod('active_section_galleries')){
-	        if (get_theme_mod('disactive_gallerie_carousel')){
-	            get_template_part('template-parts/section-gallery');
+			if (get_theme_mod('active_gallerie_carousel')) {
+				get_template_part('template-parts/section-gallery-carousel');
 			}else{
-	            get_template_part('template-parts/section-gallery-carousel');
+	            get_template_part('template-parts/section-gallery');
 	        }
 		}?>
 		</div>

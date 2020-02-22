@@ -326,7 +326,15 @@ if (count($pages)!=0)
         'label' => 'Gallerie fotografiche',
         'type' => 'checkbox', 'section' => 'site_settings_child', 'settings' => 'active_section_galleries'
     ));
-    
+/* Sezione Gallerie in Home (Carousel o Standard) */
+	$wp_customize->add_setting('active_gallerie_carousel', array(
+		'default' => true, 'capability' => 'edit_theme_options', 'sanitize_callback' => 'italiawp_sanitize_checkbox'
+	));
+	$wp_customize->add_control('active_gallerie_carousel', array(
+	'label' => 'Il blocco Gallerie in Home Page deve essere visualizzate come Carousel?',
+	'type' => 'checkbox', 'section' => 'site_settings_child', 'settings' => 'active_gallerie_carousel'
+	));
+
 /* Map */
     $wp_customize->add_setting('active_section_map', array(
         'default' => false, 'capability' => 'edit_theme_options', 'sanitize_callback' => 'italiawp_sanitize_checkbox'
