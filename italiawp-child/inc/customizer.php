@@ -16,6 +16,11 @@ if (count($pages)!=0)
 	}  
 	
 /**
+* Rimozione sezioni non utilizzate da tema padre
+*/	
+	
+	$wp_customize->remove_control("disactive_gallerie_carousel");
+/**
 * 
 * Sezione Dati Ente
 * 
@@ -326,7 +331,15 @@ if (count($pages)!=0)
         'label' => 'Gallerie fotografiche',
         'type' => 'checkbox', 'section' => 'site_settings_child', 'settings' => 'active_section_galleries'
     ));
-    
+/* Sezione Gallerie in Home (Carousel o Standard) */
+	$wp_customize->add_setting('active_gallerie_carousel', array(
+		'default' => false, 'capability' => 'edit_theme_options', 'sanitize_callback' => 'italiawp_sanitize_checkbox'
+	));
+	$wp_customize->add_control('active_gallerie_carousel', array(
+		'label' => 'Attiva la visualizzazione carousel delle Gallerie Fotografiche',
+		'type' => 'checkbox', 'section' => 'site_settings_child', 'settings' => 'active_gallerie_carousel'
+	));
+
 /* Map */
     $wp_customize->add_setting('active_section_map', array(
         'default' => false, 'capability' => 'edit_theme_options', 'sanitize_callback' => 'italiawp_sanitize_checkbox'
@@ -597,7 +610,7 @@ if (count($pages)!=0)
         'settings' => 'Scuola_Mappa_Link',
         'priority'	=> 27));
 }
-add_action('customize_register', 'italiawp_child_customize_register',99);
+add_action('customize_register', 'italiawp_child_customize_register',999);
 function italiawp_child_sanitize_number( $input ) {
     if (is_numeric($input)) { 
     	return $input; 

@@ -6,15 +6,15 @@
  */
 ?>
 
-<div class="u-layout-centerContent u-background-grey-20 u-padding-r-top section">
+<div class="u-layout-centerContent u-background-white u-color-black  u-padding-r-top section">
     
     <section class="u-layout-wide u-layout-r-withGutter u-text-r-s u-padding-r-top u-padding-r-bottom">
         
-        <div class="u-layout-centerLeft">
-            <h2 class="u-text-r-l">Gallerie fotografiche</h2>
-        </div>
-        
-        <div class="Grid Grid--withGutterM u-padding-r-top u-text-r-xxl">
+ 		<div class="Grid">
+			<h2 class="Grid-cell u-text-h2 u-layout-centerLeft">Gallerie fotografiche</h2>
+		</div>
+		
+        <div class="Grid Grid--withGutterM u-text-r-xxl">
             
 <?php
 $args = array(
@@ -35,7 +35,9 @@ if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->t
             }
         }
 
-        $category = get_the_category(); $first_category = $category[0];
+			$category = get_the_category();
+        if(count($category)>0)
+        	$first_category = $category[0];
         $datapost = get_the_date('j F Y', '', ''); ?>
 
             <div class="Grid-cell usizefull u-md-size1of3 u-lg-size1of3 u-text-r-m u-margin-r-bottom u-layout-matchHeight">
