@@ -20,7 +20,7 @@ if ( has_post_thumbnail() ) {
 		<img src="<?php echo $large_image_url[0];?>" style="width: 100%;" alt="Immagine in evidenza della Home Page"/>
 	</div><?php
 }
-	if(get_theme_mod('active_slide_inevidenza') or get_theme_mod('active_blocco_scuola')){
+if (get_theme_mod('active_slide_inevidenza') or get_theme_mod('active_blocco_scuola') or get_theme_mod('active_section_galleries')) {
 	?>
 		<div id="Scuola" class="u-padding-r-top">
 	<?php
