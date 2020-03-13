@@ -14,6 +14,8 @@ facebook: https://www.facebook.com/wpscuola/
 ## Siti di riferimento
 demo del tema: https://scuola.eduva.org
 ## Change log
+- **1.1.5**
+  - ***Aggiunta*** la paginazione negli archivi dei post
 - **1.1.4**
   - ***Corretto*** errore sui parametri di personalizzazione del blocco delle gallerie in home page
 - **1.1.3**
