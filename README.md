@@ -16,9 +16,9 @@ demo del tema: https://scuola.eduva.org
 ## Change log
 - **1.1.6**
   - ***Aggiunti*** in Tema > Personalizza > Sito & Home tre nuovi campi per la personalizzazione del banner informativo sui Cookies
-					- ***Attiva Banner Cookies*** permette di disattivare la visualizzazione del banner per la gestione tramite plugin della gestione dell'informativa sui coolies
-					- ***Testo messaggio*** permette di personalizzare il testo del messaggio
-					- ***Seleziona la pagina della Privacy policy*** permette di selezionare la pagina della Privacy policy
+	- ***Attiva Banner Cookies*** permette di disattivare la visualizzazione del banner per la gestione tramite plugin della gestione dell'informativa sui coolies
+	- ***Testo messaggio*** permette di personalizzare il testo del messaggio
+	- ***Seleziona la pagina della Privacy policy*** permette di selezionare la pagina della Privacy policy
 - **1.1.5**
   - ***Aggiunta*** la paginazione negli archivi dei post
 - **1.1.4**
