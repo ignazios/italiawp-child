@@ -58,17 +58,22 @@
 </head>
 
 <body class="t-Pac">
-
+<?php  if (get_theme_mod('active_section_cookies')) { ?>
     <div id="cookie-bar" class="CookieBar js-CookieBar u-background-95 u-padding-r-all" aria-hidden="true">
-        <p class="u-color-white u-text-r-xs u-lineHeight-m u-padding-r-bottom">Questo sito utilizza cookie tecnici, analytics e di terze parti.
+        <p class="u-color-white u-text-r-xs u-lineHeight-m u-padding-r-bottom">
+        <?php if (get_theme_mod('active_section_testoMSG')) { 
+        			echo get_theme_mod('active_section_testoMSG');
+				}else{?>
+        		Questo sito utilizza cookie tecnici, analytics e di terze parti.
             <br>Proseguendo nella navigazione accetti l’utilizzo dei cookie.<br>
         </p>
+        <?php }?>
         <p>
             <button class="Button Button--default u-text-r-xxs js-cookieBarAccept u-inlineBlock u-margin-r-all">Accetto</button>
-            <a href="<?php echo get_permalink(get_option('dettagli-id-privacy')); ?>" class="u-text-r-xs" target="_self">Privacy policy</a>
+            <a href="<?php echo get_permalink(get_theme_mod('active_section_linkprivacy')); ?>" class="u-text-r-xs" target="_self">Privacy policy</a>
         </p>
     </div>
-
+<?php } ?>
     <ul class="Skiplinks js-fr-bypasslinks u-hiddenPrint">
         <li><a href="#main" target="_self">Vai al contenuto</a></li>
         <li><a class="js-fr-offcanvas-open" href="#menu"

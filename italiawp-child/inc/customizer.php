@@ -348,7 +348,32 @@ if (count($pages)!=0)
         'label' => 'Mappa',
         'type' => 'checkbox', 'section' => 'site_settings_child', 'settings' => 'active_section_map'
     ));
-
+/* Cookies */
+    $wp_customize->add_setting('active_section_cookies', array(
+        'default' => true, 'capability' => 'edit_theme_options', 'sanitize_callback' => 'italiawp_sanitize_checkbox'
+    ));
+    $wp_customize->add_control('active_section_cookies', array(
+        'label' => 'Attiva Banner Cookies',
+        'type' => 'checkbox', 'section' => 'site_settings_child', 'settings' => 'active_section_cookies'
+    ));
+    $wp_customize->add_setting('active_section_testoMSG', array(
+        'default' => "", 
+        'capability' => 'edit_theme_options'));
+    $wp_customize->add_control('active_section_testoMSG', array(
+        'type' => 'textarea', 
+        'label' => 'Testo messaggio',
+        'description' => 'testo alternativo a quello standard <br /><strong>Questo sito utilizza cookie tecnici, analytics e di terze parti.
+Proseguendo nella navigazione accetti l’utilizzo dei cookie.</strong><br />Si possono utilizzare tag HTML come &lt;em&gt; &lt;strong&gt; &lt;br /&gt;',
+        'section' => 'site_settings_child', 
+        'settings' => 'active_section_testoMSG',));
+    $wp_customize->add_setting( 'active_section_linkprivacy' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'active_section_linkprivacy', array(
+        'type' 		=> 'select',
+        'label' 	=> 'Seleziona la pagina della Privacy policy',
+        'section' 	=> 'site_settings_child',
+        'settings' => 'active_section_linkprivacy',
+        'choices'   => $pagine));	        
 /**
 * Template Home Sezione In Evidenza
 */
