@@ -238,6 +238,40 @@ if (count($pages)!=0)
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-contatti-coduni',
         'priority'	=> 26));
+// Campo IBAN1
+    $wp_customize->add_setting( 'dettagli-contatti-nomeiban1' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-nomeiban1', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Descrizione IBAN:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-nomeiban1',
+        'priority'	=> 27));   
+    $wp_customize->add_setting( 'dettagli-contatti-iban1' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-iban1', array(
+        'type' 		=> 'text',
+        'label' 	=> 'IBAN:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-iban1',
+        'priority'	=> 28));        
+// Campo IBAN2
+    $wp_customize->add_setting( 'dettagli-contatti-nomeiban2' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-nomeiban2', array(
+        'type' 		=> 'text',
+        'label' 	=> 'Descrizione IBAN:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-nomeiban2',
+        'priority'	=> 29));   
+    $wp_customize->add_setting( 'dettagli-contatti-iban2' , array(
+		'capability' => 'edit_theme_options') );
+	$wp_customize->add_control( 'dettagli-contatti-iban2', array(
+        'type' 		=> 'text',
+        'label' 	=> 'IBAN:',
+        'section' 	=> 'site_ente',
+        'settings' => 'dettagli-contatti-iban2',
+        'priority'	=> 30));            
 // Titolo Social
     $wp_customize->add_setting( 'dettagli-social' , array(
 		'capability' => 'edit_theme_options') );
@@ -245,7 +279,7 @@ if (count($pages)!=0)
 			'label'	=> "Social",
 			'section' => 'site_ente',
 			'settings' => 'dettagli-social',
-			'priority'	=> 27) 
+			'priority'	=> 31) 
 	));
 // Campo Facebook
     $wp_customize->add_setting( 'dettagli-social-facebook' , array(
@@ -255,7 +289,7 @@ if (count($pages)!=0)
         'label' 	=> 'Facebook:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-social-facebook',
-        'priority'	=> 28));
+        'priority'	=> 32));
 // Campo Twitter
     $wp_customize->add_setting( 'dettagli-social-twitter' , array(
 		'capability' => 'edit_theme_options') );
@@ -264,7 +298,7 @@ if (count($pages)!=0)
         'label' 	=> 'Twitter:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-social-twitter',
-        'priority'	=> 29));
+        'priority'	=> 33));
 // Campo YouTube
     $wp_customize->add_setting( 'dettagli-social-youtube' , array(
 		'capability' => 'edit_theme_options') );
@@ -273,7 +307,7 @@ if (count($pages)!=0)
         'label' 	=> 'YouTube:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-social-youtube',
-        'priority'	=> 30));
+        'priority'	=> 34));
 // Campo Instagram
     $wp_customize->add_setting( 'dettagli-social-instagram' , array(
 		'capability' => 'edit_theme_options') );
@@ -282,7 +316,7 @@ if (count($pages)!=0)
         'label' 	=> 'Instagram:',
         'section' 	=> 'site_ente',
         'settings' => 'dettagli-social-instagram',
-        'priority'	=> 31));
+        'priority'	=> 35));
 /**
 *  Rimozione delle sezioni non utilizzate dal child
 * 

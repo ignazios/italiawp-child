@@ -14,6 +14,9 @@ facebook: https://www.facebook.com/wpscuola/
 ## Siti di riferimento
 demo del tema: https://scuola.eduva.org
 ## Change log
+- **1.1.7**
+  - ***Aggiunti*** in Tema > Personalizza > Dati Ente quattro campi per inserire due IBAN con relativo ente Bancario
+  - ***Aggiunti*** nel footer due righe nella colonna Informazioni che riportano i due IBAN con relativo ente Bancario
 - **1.1.6**
   - ***Aggiunti*** in Tema > Personalizza > Sito & Home tre nuovi campi per la personalizzazione del banner informativo sui Cookies
 	- ***Attiva Banner Cookies*** permette di disattivare la visualizzazione del banner per la gestione tramite plugin della gestione dell'informativa sui coolies

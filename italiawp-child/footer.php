@@ -49,12 +49,19 @@ endif;?>
                     <h2 class="Footer-blockTitle">Informazioni</h2>
                     <div class="Footer-subBlock">
                          <address>
-                            <?php echo get_theme_mod('dettagli-contatti-indirizzo'); ?><br>
-                            <?php echo get_theme_mod('dettagli-contatti-cap'); ?>, <?php echo get_theme_mod('dettagli-contatti-citta'); ?><br><br>
-                            C.M. <?php echo get_theme_mod('dettagli-contatti-CM'); ?><br>
-                            C.F. <?php echo get_theme_mod('dettagli-contatti-cfpa'); ?><br>
-                            <?php echo (get_theme_mod('dettagli-contatti-pipa')!=""?"P.Iva ".get_theme_mod('dettagli-contatti-pipa'):""); ?><br>
-                            Cod. Univoco <?php echo get_theme_mod('dettagli-contatti-coduni'); ?>
+                            <?php echo get_theme_mod('dettagli-contatti-indirizzo'); ?><br />
+                            <?php echo get_theme_mod('dettagli-contatti-cap'); ?>, <?php echo get_theme_mod('dettagli-contatti-citta'); ?><br/>
+                            <strong>C.M.</strong> <?php echo get_theme_mod('dettagli-contatti-CM'); ?><br />
+                            <strong>C.F.</strong> <?php echo get_theme_mod('dettagli-contatti-cfpa'); ?><br />
+                            <?php echo (get_theme_mod('dettagli-contatti-pipa')!=""?"P.Iva ".get_theme_mod('dettagli-contatti-pipa'):""); ?><br />
+                            <strong>Cod. Univoco</strong> <?php echo get_theme_mod('dettagli-contatti-coduni'); ?><br />
+                            <?php if (get_theme_mod('dettagli-contatti-iban1') And get_theme_mod('dettagli-contatti-iban1')!=""){?>
+                            	<strong>IBAN <?php echo get_theme_mod('dettagli-contatti-nomeiban1'); ?></strong><br /><?php echo get_theme_mod('dettagli-contatti-iban1'); 
+								  }
+								  if (get_theme_mod('dettagli-contatti-iban1') And get_theme_mod('dettagli-contatti-iban1')!=""){?>
+                            	<br /><strong>IBAN <?php echo get_theme_mod('dettagli-contatti-nomeiban2'); ?></strong><br /><?php echo get_theme_mod('dettagli-contatti-iban2'); 
+								  } 
+							?>
                         </address>
                     </div>
                 </div>
