@@ -35,13 +35,13 @@ class Comunicazioni extends WP_Widget
 	<?php
 	echo $before_widget;
 	$TipoCircolari="C";
+	$NumCircolari=0;
 	if ( post_type_exists( 'circolari' ) ) {
 		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		if (is_plugin_active("gestione-circolari-groups/GestioneCircolari.php")) {
 			$TipoCircolari="G";
 			$Circolari=get_ListaCircolariG(FALSE,$numelementi);
 			$Gruppi=gcg_get_Circolari_Gruppi("ArrayN");
-			$NumCircolari=0;
 			if (is_user_logged_in())
 				$NumCircolari=gcg_GetCircolariDaFirmare("N");
 		} else {

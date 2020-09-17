@@ -89,12 +89,12 @@
         <?php if(get_theme_mod('dettagli-nome-ammin-afferente')!="" or get_theme_mod('dettagli-logo-ammin-afferente')!="") { ?>
         <div class="Header-banner" id="Header-banner">
             <div class="Header-owner Headroom-hideme ">
-                <a href="<?php echo get_theme_mod('dettagli-url-ammin-afferente'); ?>"  target="_self" title="Logo amministrazione afferente">
+                <a href="<?php echo get_theme_mod('dettagli-url-ammin-afferente'); ?>"  target="_self" title="Vai al sito <?php echo get_theme_mod('dettagli-nome-ammin-afferente');?>">
                 	<span>
             <?php if(get_theme_mod('dettagli-logo-ammin-afferente')!=""){
             	$logo=wp_get_attachment_image_src(get_theme_mod('dettagli-logo-ammin-afferente'), 'full');
             	$logo = esc_url($logo[0]);?>
-            		<img class="custom-logo" alt="Logo <?php echo get_theme_mod('dettagli-nome-ammin-afferente');?>" itemprop="logo" src="<?php echo $logo;?>">
+            		<img class="custom-logo" alt="Logo " itemprop="logo" src="<?php echo $logo;?>">
             		</span>
             	</a>
             <?php }

@@ -14,6 +14,8 @@ facebook: https://www.facebook.com/wpscuola/
 ## Siti di riferimento
 demo del tema: https://scuola.eduva.org
 ## Change log
+- **1.1.8**
+  - ***Correti*** errori per l'accessibilità
 - **1.1.7**
   - ***Aggiunti*** in Tema > Personalizza > Dati Ente quattro campi per inserire due IBAN con relativo ente Bancario
   - ***Aggiunti*** nel footer due righe nella colonna Informazioni che riportano i due IBAN con relativo ente Bancario
