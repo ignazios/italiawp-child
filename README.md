@@ -14,6 +14,8 @@ facebook: https://www.facebook.com/wpscuola/
 ## Siti di riferimento
 demo del tema: https://scuola.eduva.org
 ## Change log
+- **1.1.9**
+  - ***Correto*** un errore nel widget Amministrazione Trasparente
 - **1.1.8**
   - ***Correti*** errori per l'accessibilità
 - **1.1.7**

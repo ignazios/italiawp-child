@@ -8,7 +8,7 @@ Logic:	($logic) Indica se visualizzare solo nella pagina indicata nelle impostaz
 
 class my_atWidget extends WP_Widget {
 
-    function my_atWidget() {
+    function __construct()
         parent::__construct( 'my_atwidget', 'ItaliaWP Amministrazione Trasparente', array( 'description' => 'Personalizzazione della lista delle sezioni relative alla trasparenza per il template ItaliaWP' ) );
     }
 
